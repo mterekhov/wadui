@@ -7,21 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4CCDF0EC23AD4FED001D11CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EB23AD4FED001D11CE /* AppDelegate.m */; };
+		4CCDF0EC23AD4FED001D11CE /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */; };
 		4CCDF0EE23AD4FEE001D11CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0ED23AD4FEE001D11CE /* Assets.xcassets */; };
 		4CCDF0F123AD4FEE001D11CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EF23AD4FEE001D11CE /* MainMenu.xib */; };
 		4CCDF0F423AD4FEE001D11CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0F323AD4FEE001D11CE /* main.m */; };
+		4CCDF12323AD505A001D11CE /* alevelintegrity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */; };
+		4CCDF12423AD505A001D11CE /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0FE23AD505A001D11CE /* atexture.cpp */; };
+		4CCDF12523AD505A001D11CE /* aflat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0FF23AD505A001D11CE /* aflat.cpp */; };
+		4CCDF12623AD505A001D11CE /* awad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10023AD505A001D11CE /* awad.cpp */; };
+		4CCDF12723AD505A001D11CE /* athing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10123AD505A001D11CE /* athing.cpp */; };
+		4CCDF12823AD505A001D11CE /* acolormap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10823AD505A001D11CE /* acolormap.cpp */; };
+		4CCDF12923AD505A001D11CE /* aendoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10923AD505A001D11CE /* aendoom.cpp */; };
+		4CCDF12A23AD505A001D11CE /* ademo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10C23AD505A001D11CE /* ademo.cpp */; };
+		4CCDF12B23AD505A001D11CE /* apicture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10D23AD505A001D11CE /* apicture.cpp */; };
+		4CCDF12C23AD505A001D11CE /* apalete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11223AD505A001D11CE /* apalete.cpp */; };
+		4CCDF12D23AD505A001D11CE /* alump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11323AD505A001D11CE /* alump.cpp */; };
+		4CCDF12E23AD505A001D11CE /* autilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11523AD505A001D11CE /* autilities.cpp */; };
+		4CCDF12F23AD505A001D11CE /* aimagedata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11923AD505A001D11CE /* aimagedata.cpp */; };
+		4CCDF13023AD505A001D11CE /* ageometryreadservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11A23AD505A001D11CE /* ageometryreadservice.cpp */; };
+		4CCDF13223AD505A001D11CE /* asprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11D23AD505A001D11CE /* asprite.cpp */; };
+		4CCDF13323AD505A001D11CE /* alevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11E23AD505A001D11CE /* alevel.cpp */; };
+		4CCDF13423AD505A001D11CE /* atgaexporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11F23AD505A001D11CE /* atgaexporter.cpp */; };
+		4CCDF13523AD505A001D11CE /* doom.wad in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF12123AD505A001D11CE /* doom.wad */; };
+		4CCDF13623AD505A001D11CE /* doom1.wad in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF12223AD505A001D11CE /* doom1.wad */; };
+		4CCDF13923AD530F001D11CE /* LumpsListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13823AD530F001D11CE /* LumpsListDataSource.m */; };
+		4CCDF13C23AD532A001D11CE /* LumpsService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13B23AD532A001D11CE /* LumpsService.mm */; };
+		4CCDF13F23AD537C001D11CE /* LumpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13E23AD537C001D11CE /* LumpModel.m */; };
+		4CCDF14223AD6112001D11CE /* MainMenuHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF14123AD6112001D11CE /* MainMenuHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4CCDF0E723AD4FED001D11CE /* wadui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wadui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCDF0EA23AD4FED001D11CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4CCDF0EB23AD4FED001D11CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		4CCDF0ED23AD4FEE001D11CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CCDF0F023AD4FEE001D11CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4CCDF0F223AD4FEE001D11CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CCDF0F323AD4FEE001D11CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CCDF0F523AD4FEE001D11CE /* wadui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wadui.entitlements; sourceTree = "<group>"; };
+		4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alevelintegrity.cpp; sourceTree = "<group>"; };
+		4CCDF0FD23AD505A001D11CE /* aflat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aflat.h; sourceTree = "<group>"; };
+		4CCDF0FE23AD505A001D11CE /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = atexture.cpp; sourceTree = "<group>"; };
+		4CCDF0FF23AD505A001D11CE /* aflat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aflat.cpp; sourceTree = "<group>"; };
+		4CCDF10023AD505A001D11CE /* awad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = awad.cpp; sourceTree = "<group>"; };
+		4CCDF10123AD505A001D11CE /* athing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = athing.cpp; sourceTree = "<group>"; };
+		4CCDF10223AD505A001D11CE /* aimagedata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimagedata.h; sourceTree = "<group>"; };
+		4CCDF10323AD505A001D11CE /* autilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autilities.h; sourceTree = "<group>"; };
+		4CCDF10423AD505A001D11CE /* acolormap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acolormap.h; sourceTree = "<group>"; };
+		4CCDF10523AD505A001D11CE /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		4CCDF10623AD505A001D11CE /* alump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alump.h; sourceTree = "<group>"; };
+		4CCDF10723AD505A001D11CE /* athing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = athing.h; sourceTree = "<group>"; };
+		4CCDF10823AD505A001D11CE /* acolormap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acolormap.cpp; sourceTree = "<group>"; };
+		4CCDF10923AD505A001D11CE /* aendoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aendoom.cpp; sourceTree = "<group>"; };
+		4CCDF10A23AD505A001D11CE /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atexture.h; sourceTree = "<group>"; };
+		4CCDF10B23AD505A001D11CE /* atgaexporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atgaexporter.h; sourceTree = "<group>"; };
+		4CCDF10C23AD505A001D11CE /* ademo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ademo.cpp; sourceTree = "<group>"; };
+		4CCDF10D23AD505A001D11CE /* apicture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = apicture.cpp; sourceTree = "<group>"; };
+		4CCDF10E23AD505A001D11CE /* ageometryreadservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ageometryreadservice.h; sourceTree = "<group>"; };
+		4CCDF10F23AD505A001D11CE /* alevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alevel.h; sourceTree = "<group>"; };
+		4CCDF11023AD505A001D11CE /* alevelintegrity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alevelintegrity.h; sourceTree = "<group>"; };
+		4CCDF11123AD505A001D11CE /* asprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asprite.h; sourceTree = "<group>"; };
+		4CCDF11223AD505A001D11CE /* apalete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = apalete.cpp; sourceTree = "<group>"; };
+		4CCDF11323AD505A001D11CE /* alump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alump.cpp; sourceTree = "<group>"; };
+		4CCDF11423AD505A001D11CE /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
+		4CCDF11523AD505A001D11CE /* autilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = autilities.cpp; sourceTree = "<group>"; };
+		4CCDF11623AD505A001D11CE /* apalete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apalete.h; sourceTree = "<group>"; };
+		4CCDF11723AD505A001D11CE /* apicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apicture.h; sourceTree = "<group>"; };
+		4CCDF11823AD505A001D11CE /* awad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = awad.h; sourceTree = "<group>"; };
+		4CCDF11923AD505A001D11CE /* aimagedata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aimagedata.cpp; sourceTree = "<group>"; };
+		4CCDF11A23AD505A001D11CE /* ageometryreadservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ageometryreadservice.cpp; sourceTree = "<group>"; };
+		4CCDF11B23AD505A001D11CE /* aendoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aendoom.h; sourceTree = "<group>"; };
+		4CCDF11D23AD505A001D11CE /* asprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = asprite.cpp; sourceTree = "<group>"; };
+		4CCDF11E23AD505A001D11CE /* alevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alevel.cpp; sourceTree = "<group>"; };
+		4CCDF11F23AD505A001D11CE /* atgaexporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = atgaexporter.cpp; sourceTree = "<group>"; };
+		4CCDF12023AD505A001D11CE /* ademo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ademo.h; sourceTree = "<group>"; };
+		4CCDF12123AD505A001D11CE /* doom.wad */ = {isa = PBXFileReference; lastKnownFileType = file; path = doom.wad; sourceTree = "<group>"; };
+		4CCDF12223AD505A001D11CE /* doom1.wad */ = {isa = PBXFileReference; lastKnownFileType = file; path = doom1.wad; sourceTree = "<group>"; };
+		4CCDF13723AD530F001D11CE /* LumpsListDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumpsListDataSource.h; sourceTree = "<group>"; };
+		4CCDF13823AD530F001D11CE /* LumpsListDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LumpsListDataSource.m; sourceTree = "<group>"; };
+		4CCDF13A23AD532A001D11CE /* LumpsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumpsService.h; sourceTree = "<group>"; };
+		4CCDF13B23AD532A001D11CE /* LumpsService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LumpsService.mm; sourceTree = "<group>"; };
+		4CCDF13D23AD537C001D11CE /* LumpModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumpModel.h; sourceTree = "<group>"; };
+		4CCDF13E23AD537C001D11CE /* LumpModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LumpModel.m; sourceTree = "<group>"; };
+		4CCDF14023AD6111001D11CE /* MainMenuHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuHandler.h; sourceTree = "<group>"; };
+		4CCDF14123AD6112001D11CE /* MainMenuHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +107,10 @@
 		4CCDF0DE23AD4FED001D11CE = {
 			isa = PBXGroup;
 			children = (
+				4CCDF0FB23AD505A001D11CE /* wad */,
 				4CCDF0E923AD4FED001D11CE /* wadui */,
+				4CCDF12123AD505A001D11CE /* doom.wad */,
+				4CCDF12223AD505A001D11CE /* doom1.wad */,
 				4CCDF0E823AD4FED001D11CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,14 +127,65 @@
 			isa = PBXGroup;
 			children = (
 				4CCDF0EA23AD4FED001D11CE /* AppDelegate.h */,
-				4CCDF0EB23AD4FED001D11CE /* AppDelegate.m */,
+				4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */,
+				4CCDF14023AD6111001D11CE /* MainMenuHandler.h */,
+				4CCDF14123AD6112001D11CE /* MainMenuHandler.m */,
 				4CCDF0ED23AD4FEE001D11CE /* Assets.xcassets */,
 				4CCDF0EF23AD4FEE001D11CE /* MainMenu.xib */,
 				4CCDF0F223AD4FEE001D11CE /* Info.plist */,
 				4CCDF0F323AD4FEE001D11CE /* main.m */,
 				4CCDF0F523AD4FEE001D11CE /* wadui.entitlements */,
+				4CCDF13723AD530F001D11CE /* LumpsListDataSource.h */,
+				4CCDF13823AD530F001D11CE /* LumpsListDataSource.m */,
+				4CCDF13A23AD532A001D11CE /* LumpsService.h */,
+				4CCDF13B23AD532A001D11CE /* LumpsService.mm */,
+				4CCDF13D23AD537C001D11CE /* LumpModel.h */,
+				4CCDF13E23AD537C001D11CE /* LumpModel.m */,
 			);
 			path = wadui;
+			sourceTree = "<group>";
+		};
+		4CCDF0FB23AD505A001D11CE /* wad */ = {
+			isa = PBXGroup;
+			children = (
+				4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */,
+				4CCDF0FD23AD505A001D11CE /* aflat.h */,
+				4CCDF0FE23AD505A001D11CE /* atexture.cpp */,
+				4CCDF0FF23AD505A001D11CE /* aflat.cpp */,
+				4CCDF10023AD505A001D11CE /* awad.cpp */,
+				4CCDF10123AD505A001D11CE /* athing.cpp */,
+				4CCDF10223AD505A001D11CE /* aimagedata.h */,
+				4CCDF10323AD505A001D11CE /* autilities.h */,
+				4CCDF10423AD505A001D11CE /* acolormap.h */,
+				4CCDF10523AD505A001D11CE /* types.h */,
+				4CCDF10623AD505A001D11CE /* alump.h */,
+				4CCDF10723AD505A001D11CE /* athing.h */,
+				4CCDF10823AD505A001D11CE /* acolormap.cpp */,
+				4CCDF10923AD505A001D11CE /* aendoom.cpp */,
+				4CCDF10A23AD505A001D11CE /* atexture.h */,
+				4CCDF10B23AD505A001D11CE /* atgaexporter.h */,
+				4CCDF10C23AD505A001D11CE /* ademo.cpp */,
+				4CCDF10D23AD505A001D11CE /* apicture.cpp */,
+				4CCDF10E23AD505A001D11CE /* ageometryreadservice.h */,
+				4CCDF10F23AD505A001D11CE /* alevel.h */,
+				4CCDF11023AD505A001D11CE /* alevelintegrity.h */,
+				4CCDF11123AD505A001D11CE /* asprite.h */,
+				4CCDF11223AD505A001D11CE /* apalete.cpp */,
+				4CCDF11323AD505A001D11CE /* alump.cpp */,
+				4CCDF11423AD505A001D11CE /* enums.h */,
+				4CCDF11523AD505A001D11CE /* autilities.cpp */,
+				4CCDF11623AD505A001D11CE /* apalete.h */,
+				4CCDF11723AD505A001D11CE /* apicture.h */,
+				4CCDF11823AD505A001D11CE /* awad.h */,
+				4CCDF11923AD505A001D11CE /* aimagedata.cpp */,
+				4CCDF11A23AD505A001D11CE /* ageometryreadservice.cpp */,
+				4CCDF11B23AD505A001D11CE /* aendoom.h */,
+				4CCDF11D23AD505A001D11CE /* asprite.cpp */,
+				4CCDF11E23AD505A001D11CE /* alevel.cpp */,
+				4CCDF11F23AD505A001D11CE /* atgaexporter.cpp */,
+				4CCDF12023AD505A001D11CE /* ademo.h */,
+			);
+			path = wad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,8 +245,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCDF13523AD505A001D11CE /* doom.wad in Resources */,
 				4CCDF0EE23AD4FEE001D11CE /* Assets.xcassets in Resources */,
 				4CCDF0F123AD4FEE001D11CE /* MainMenu.xib in Resources */,
+				4CCDF13623AD505A001D11CE /* doom1.wad in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +260,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCDF0F423AD4FEE001D11CE /* main.m in Sources */,
-				4CCDF0EC23AD4FED001D11CE /* AppDelegate.m in Sources */,
+				4CCDF12F23AD505A001D11CE /* aimagedata.cpp in Sources */,
+				4CCDF0EC23AD4FED001D11CE /* AppDelegate.mm in Sources */,
+				4CCDF13023AD505A001D11CE /* ageometryreadservice.cpp in Sources */,
+				4CCDF13223AD505A001D11CE /* asprite.cpp in Sources */,
+				4CCDF12623AD505A001D11CE /* awad.cpp in Sources */,
+				4CCDF12323AD505A001D11CE /* alevelintegrity.cpp in Sources */,
+				4CCDF13423AD505A001D11CE /* atgaexporter.cpp in Sources */,
+				4CCDF12D23AD505A001D11CE /* alump.cpp in Sources */,
+				4CCDF12823AD505A001D11CE /* acolormap.cpp in Sources */,
+				4CCDF13C23AD532A001D11CE /* LumpsService.mm in Sources */,
+				4CCDF13F23AD537C001D11CE /* LumpModel.m in Sources */,
+				4CCDF12723AD505A001D11CE /* athing.cpp in Sources */,
+				4CCDF12B23AD505A001D11CE /* apicture.cpp in Sources */,
+				4CCDF12523AD505A001D11CE /* aflat.cpp in Sources */,
+				4CCDF12C23AD505A001D11CE /* apalete.cpp in Sources */,
+				4CCDF12E23AD505A001D11CE /* autilities.cpp in Sources */,
+				4CCDF14223AD6112001D11CE /* MainMenuHandler.m in Sources */,
+				4CCDF12423AD505A001D11CE /* atexture.cpp in Sources */,
+				4CCDF12A23AD505A001D11CE /* ademo.cpp in Sources */,
+				4CCDF13323AD505A001D11CE /* alevel.cpp in Sources */,
+				4CCDF13923AD530F001D11CE /* LumpsListDataSource.m in Sources */,
+				4CCDF12923AD505A001D11CE /* aendoom.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
