@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) id<LumpsServiceProtocol> lumpsService;
 @property (weak) IBOutlet NSTableView *lumpsListTableView;
 
+- (IBAction)lumpSelected:(id)sender;
+
 @end
 
 NS_ASSUME_NONNULL_END

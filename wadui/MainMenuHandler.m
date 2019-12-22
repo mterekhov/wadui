@@ -16,9 +16,37 @@
     if ([openDialog runModal] == NSModalResponseOK) {
         if (!self.delegate) {
             return;
-        }        
+        }
         [self.delegate openFileResults:openDialog.URLs];
     }
+}
+
+- (IBAction)performClose:(id)sender {
+    if (!self.delegate) {
+        return;
+    }
+    
+    [self.delegate closeCurrentWad];
+}
+
+- (IBAction)hideMaps:(id)sender {
+    
+}
+
+- (IBAction)showMarkersOnly:(id)sender {
+    
+}
+
+- (IBAction)useHex:(id)sender {
+    
+}
+
+- (IBAction)exportSelectedLumps:(id)sender {
+    if (!self.delegate) {
+        return;
+    }
+    
+    [self.delegate exportSelectedLumps];
 }
 
 @end

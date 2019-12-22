@@ -10,6 +10,7 @@
 #import "LumpsService.h"
 #import "LumpModel.h"
 #import "MainMenuHandler.h"
+#import "AppDelegate.h"
 
 static const NSString *LumpsListNameCellID = @"LumpsListNameCellID";
 static const NSString *LumpsListSizeCellID = @"LumpsListSizeCellID";
@@ -24,7 +25,22 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
 
 @implementation LumpsListDataSource
 
+- (IBAction)lumpSelected:(id)sender {
+    NSLog(@"sender %@", sender);
+}
+
 #pragma mark - MainMenuHandlerDelegate -
+
+- (void)closeCurrentWad {
+    self.lumpsList = [NSArray new];
+    [self.lumpsListTableView reloadData];
+    AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+    appDelegate.window.title = @"wadui";
+}
+
+- (void)exportSelectedLumps {
+    NSLog(@"lumps list to export %@", self.lumpsListTableView.selectedRowIndexes);
+}
 
 - (void)openFileResults:(NSArray<NSURL *> *)urls {
     if (!urls.count) {
@@ -35,6 +51,8 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
     self.lumpsService = [[LumpsService alloc] initWithWadFileName:wadFilePath];
     [self refreshLumpsList];
     [self.lumpsListTableView reloadData];
+    AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+    appDelegate.window.title = [NSString stringWithFormat:@"%@ - %li lump", urls.firstObject.lastPathComponent, self.lumpsList.count];
 }
 
 #pragma mark - NSTableViewDataSource -
@@ -45,9 +63,19 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
 
 #pragma mark - NSTableViewDelegate -
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    NSLog(@"selected %li", self.lumpsListTableView.selectedRowIndexes.count);
+}
+
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    BOOL shouldShowInHex = YES;
     NSString *cellId = [LumpsListNameCellID copy];
     NSString *cellText = @"FUCK";
+    
+    NSString *printMask = @"%li";
+    if (shouldShowInHex) {
+        printMask = @"%#010x";
+    }
     
     if ([tableColumn isEqualTo:tableView.tableColumns[0]]) {
         cellId = [LumpsListNameCellID copy];
@@ -56,12 +84,12 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
     
     if ([tableColumn isEqualTo:tableView.tableColumns[1]]) {
         cellId = [LumpsListOffsetCellID copy];
-        cellText = [NSString stringWithFormat:@"%li", (long)self.lumpsList[row].offset];
+        cellText = [NSString stringWithFormat:printMask, (long)self.lumpsList[row].offset];
     }
     
     if ([tableColumn isEqualTo:tableView.tableColumns[2]]) {
         cellId = [LumpsListSizeCellID copy];
-        cellText = [NSString stringWithFormat:@"%li", (long)self.lumpsList[row].size];
+        cellText = [NSString stringWithFormat:printMask, (long)self.lumpsList[row].size];
     }
     
     if ([tableColumn isEqualTo:tableView.tableColumns[3]]) {

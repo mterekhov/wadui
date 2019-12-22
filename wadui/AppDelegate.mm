@@ -11,7 +11,6 @@
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet MainMenuHandler *menuHandler;
 
 @end

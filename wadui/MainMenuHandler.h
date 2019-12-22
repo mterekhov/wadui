@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MainMenuHandlerDelegate <NSObject>
 
 - (void)openFileResults:(NSArray<NSURL *> *)urls;
+- (void)exportSelectedLumps;
+- (void)closeCurrentWad;
 
 @end
 
@@ -20,7 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic, nullable) IBOutlet id<MainMenuHandlerDelegate> delegate;
 
+- (IBAction)exportSelectedLumps:(id)sender;
 - (IBAction)openDocument:(id)sender;
+- (IBAction)hideMaps:(id)sender;
+- (IBAction)showMarkersOnly:(id)sender;
+- (IBAction)useHex:(id)sender;
 
 @end
 
