@@ -37,6 +37,9 @@ public:
     ~AWAD();
     ALevel readLevel(const std::string& levelName);
     const TLumpsList& lumpsList() const;
+    
+    std::list<std::string> mapLumpsNames() const;
+    void exportLump(const ALump& lump, const std::string& folderToExport);
 
 private:
 	APalete _palete;    //  palete for every image resource

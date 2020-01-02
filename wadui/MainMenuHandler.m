@@ -29,12 +29,28 @@
     [self.delegate closeCurrentWad];
 }
 
-- (IBAction)hideMaps:(id)sender {
+- (IBAction)showAll:(id)sender {
+    if (!self.delegate) {
+        return;
+    }
     
+    [self.delegate showAll];
+}
+
+- (IBAction)hideMaps:(id)sender {
+    if (!self.delegate) {
+        return;
+    }
+    
+    [self.delegate hideMaps];
 }
 
 - (IBAction)showMarkersOnly:(id)sender {
+    if (!self.delegate) {
+        return;
+    }
     
+    [self.delegate showMarkersOnly];
 }
 
 - (IBAction)useHex:(id)sender {
@@ -42,11 +58,15 @@
 }
 
 - (IBAction)exportSelectedLumps:(id)sender {
-    if (!self.delegate) {
-        return;
+    NSOpenPanel* openDialog = [NSOpenPanel openPanel];
+    openDialog.canChooseDirectories = YES;
+    openDialog.canChooseFiles = NO;
+    if ([openDialog runModal] == NSModalResponseOK) {
+        if (!self.delegate) {
+            return;
+        }
+        [self.delegate exportSelectedLumps:openDialog.URLs.firstObject.path];
     }
-    
-    [self.delegate exportSelectedLumps];
 }
 
 @end

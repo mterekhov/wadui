@@ -15,13 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LumpsServiceProtocol <NSObject>
 
 - (NSArray<LumpModel *> *)lumpsList;
+- (NSArray<LumpModel *> *)lumpsListWithoutMaps;
+- (NSArray<LumpModel *> *)lumpsListWithMarkersOnly;
+- (void)exportLump:(LumpModel *)model folderPath:(NSString *)folderPath;
 
 @end
 
 @interface LumpsService : NSObject<LumpsServiceProtocol>
 
 - (instancetype)initWithWadFileName:(NSString *)wadFileName;
-- (NSArray<LumpModel *> *)lumpsList;
 
 @end
 

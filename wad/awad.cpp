@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sstream>
 
 #include "awad.h"
 #include "alump.h"
@@ -57,33 +58,33 @@ AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(file
 		throw;
 
 
-    for (TIndexedPicturesListIter iter = _patchesList.begin(); iter != _patchesList.end(); iter++)
-    {
-        APicture& patch = *iter;
-        std::string path = "/Users/michael/Pictures/patch/";
-        path += patch.patchName();
-        path += ".tga";
-        patch.savePatchIntoTga(path);
-    }
-    
-    for (TFlatsListIter iter = _flatsList.begin(); iter != _flatsList.end(); iter++)
-    {
-        AFlat& flat = *iter;
-        std::string path = "/Users/michael/Pictures/flat/";
-        path += flat.flatName();
-        path += ".tga";
-        flat.saveFlatIntoTga(path);
-    }
-    
-    for (TTexturesListIter iter = _texturesList.begin(); iter != _texturesList.end(); iter++)
-    {
-        ATexture& texture = *iter;
-        std::string path = "/Users/michael/Pictures/texture/";
-        path += texture.textureName();
-        path += ".tga";
-        texture.saveTextureIntoTga(path);
-    }
-    
+//    for (TIndexedPicturesListIter iter = _patchesList.begin(); iter != _patchesList.end(); iter++)
+//    {
+//        APicture& patch = *iter;
+//        std::string path = "/Users/michael/Pictures/patch/";
+//        path += patch.patchName();
+//        path += ".tga";
+//        patch.savePatchIntoTga(path);
+//    }
+//
+//    for (TFlatsListIter iter = _flatsList.begin(); iter != _flatsList.end(); iter++)
+//    {
+//        AFlat& flat = *iter;
+//        std::string path = "/Users/michael/Pictures/flat/";
+//        path += flat.flatName();
+//        path += ".tga";
+//        flat.saveFlatIntoTga(path);
+//    }
+//
+//    for (TTexturesListIter iter = _texturesList.begin(); iter != _texturesList.end(); iter++)
+//    {
+//        ATexture& texture = *iter;
+//        std::string path = "/Users/michael/Pictures/texture/";
+//        path += texture.textureName();
+//        path += ".tga";
+//        texture.saveTextureIntoTga(path);
+//    }
+//
 //    int i = 0;
 //    for (TLumpsListIter iter = _tableOfContents.begin(); iter != _tableOfContents.end(); iter++)
 //    {
@@ -100,6 +101,10 @@ AWAD::~AWAD()
 }
 
 //=============================================================================
+    
+#pragma mark - Public -
+    
+//=============================================================================
 
 const TLumpsList& AWAD::lumpsList() const
 {
@@ -107,7 +112,55 @@ const TLumpsList& AWAD::lumpsList() const
 }
 
 //=============================================================================
+
+std::list<std::string> AWAD::mapLumpsNames() const
+{
+    std::list<std::string> list = {"THINGS", "LINEDEFS", "SIDEDEFS", "VERTEXES", "SEGS", "SSECTORS", "NODES", "SECTORS", "REJECT", "BLOCKMAP"};
+    for (int episode = 1; episode < 5; episode++)
+    {
+        for (int level = 1; level < 10; level++)
+        {
+            std::stringstream stream;
+            stream << "E" << episode << "M" << level;
+            list.push_back(stream.str());
+        }
+    }
     
+    return list;
+}
+
+void AWAD::exportLump(const ALump& lump, const std::string& folderToExport)
+{
+    FILE* wadFile = 0;
+    wadFile = fopen(_fileName.c_str(), "rb");
+    if (!wadFile)
+        throw;
+
+    if (lump.lumpSize == 0)
+    {
+        return;
+    }
+    
+    unsigned char *lumpData = new unsigned char [lump.lumpSize];
+    AUtilities::readLumpData(wadFile, lump, lumpData);
+    fclose(wadFile);
+
+    std::string exportPath = folderToExport + "/" + lump.lumpName + ".lump";
+    FILE *exportFile = fopen(exportPath.c_str(), "wb+");
+    if (!exportFile)
+        throw;
+    fwrite(lumpData, lump.lumpSize, 1, exportFile);
+    
+    fclose(exportFile);
+    delete [] lumpData;
+}
+
+//=============================================================================
+
+#pragma mark - Routine -
+
+//=============================================================================
+
 bool AWAD::checkSignature(FILE* wadFile)
 {
     char magic[4] = {0};

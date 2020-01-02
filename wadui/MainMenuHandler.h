@@ -13,8 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MainMenuHandlerDelegate <NSObject>
 
 - (void)openFileResults:(NSArray<NSURL *> *)urls;
-- (void)exportSelectedLumps;
+- (void)exportSelectedLumps:(NSString *)path;
 - (void)closeCurrentWad;
+- (void)showMarkersOnly;
+- (void)hideMaps;
+- (void)showAll;
 
 @end
 

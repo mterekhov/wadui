@@ -31,6 +31,21 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
 
 #pragma mark - MainMenuHandlerDelegate -
 
+- (void)showAll {
+    [self refreshLumpsList];
+    [self.lumpsListTableView reloadData];
+}
+
+- (void)hideMaps {
+    self.lumpsList = [self.lumpsService lumpsListWithoutMaps];
+    [self.lumpsListTableView reloadData];
+}
+
+- (void)showMarkersOnly {
+    self.lumpsList = [self.lumpsService lumpsListWithMarkersOnly];
+    [self.lumpsListTableView reloadData];
+}
+
 - (void)closeCurrentWad {
     self.lumpsList = [NSArray new];
     [self.lumpsListTableView reloadData];
@@ -38,8 +53,12 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
     appDelegate.window.title = @"wadui";
 }
 
-- (void)exportSelectedLumps {
+- (void)exportSelectedLumps:(NSString *)path {
     NSLog(@"lumps list to export %@", self.lumpsListTableView.selectedRowIndexes);
+    [self.lumpsListTableView.selectedRowIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.lumpsService exportLump:self.lumpsList[idx]
+                           folderPath:path];
+    }];
 }
 
 - (void)openFileResults:(NSArray<NSURL *> *)urls {

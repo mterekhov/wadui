@@ -152,6 +152,7 @@
 				4CCDF0FD23AD505A001D11CE /* aflat.h */,
 				4CCDF0FE23AD505A001D11CE /* atexture.cpp */,
 				4CCDF0FF23AD505A001D11CE /* aflat.cpp */,
+				4CCDF11823AD505A001D11CE /* awad.h */,
 				4CCDF10023AD505A001D11CE /* awad.cpp */,
 				4CCDF10123AD505A001D11CE /* athing.cpp */,
 				4CCDF10223AD505A001D11CE /* aimagedata.h */,
@@ -176,7 +177,6 @@
 				4CCDF11523AD505A001D11CE /* autilities.cpp */,
 				4CCDF11623AD505A001D11CE /* apalete.h */,
 				4CCDF11723AD505A001D11CE /* apicture.h */,
-				4CCDF11823AD505A001D11CE /* awad.h */,
 				4CCDF11923AD505A001D11CE /* aimagedata.cpp */,
 				4CCDF11A23AD505A001D11CE /* ageometryreadservice.cpp */,
 				4CCDF11B23AD505A001D11CE /* aendoom.h */,
@@ -414,7 +414,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = wadui/wadui.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 67BUZRGVX2;
@@ -432,7 +431,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = wadui/wadui.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 67BUZRGVX2;
