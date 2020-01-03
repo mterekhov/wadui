@@ -53,11 +53,14 @@
     [self.delegate showMarkersOnly];
 }
 
-- (IBAction)useHex:(id)sender {
-    
-}
-
 - (IBAction)exportSelectedLumps:(id)sender {
+    if (self.delegate == nil) {
+        return;
+    }
+    
+    if (![self.delegate canExport]) {
+        return;
+    }
     NSOpenPanel* openDialog = [NSOpenPanel openPanel];
     openDialog.canChooseDirectories = YES;
     openDialog.canChooseFiles = NO;

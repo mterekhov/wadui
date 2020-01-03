@@ -124,4 +124,30 @@ bool AUtilities::stringPrefixCompare(const std::string& prefix, const std::strin
 
 //=============================================================================
 
+bool AUtilities::stringPrefixCompare2(const std::string& prefix, const std::string& string)
+{
+    std::string prefixCase;
+    prefixCase.resize(prefix.size());
+    std::transform(prefix.begin(),
+                   prefix.end(),
+                   prefixCase.begin(),
+                   ::tolower);
+    
+    std::string stringCase;
+    stringCase.resize(string.size());
+    std::transform(string.begin(),
+                   string.end(),
+                   stringCase.begin(),
+                   ::tolower);
+    
+    if (std::mismatch(stringCase.begin(),stringCase.end(),prefixCase.begin()).first == stringCase.end())
+    {
+        return true;
+    }
+    
+    return false;
+}
+
+//=============================================================================
+
 };  //  namespace spcWAD

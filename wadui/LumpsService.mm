@@ -9,6 +9,7 @@
 #import "LumpsService.h"
 #import "LumpModel.h"
 #include "awad.h"
+#include "alumptools.h"
 
 @interface LumpsService ()
 
@@ -39,22 +40,14 @@
         return [lumpsList copy];
     }
     
-    std::list<std::string> mapLumps = self.wadTools->mapLumpsNames();
+    std::list<std::string> mapLumps = spcWAD::ALumpTools::doom1MapLumpsNames();
     spcWAD::TLumpsList lowLevelLumpsList = self.wadTools->lumpsList();
     for (spcWAD::TLumpsListConstIter iter = lowLevelLumpsList.begin(); iter != lowLevelLumpsList.end(); iter++) {
-        if (std::find(mapLumps.begin(), mapLumps.end(), iter->lumpName) != mapLumps.end())
-        {
+        if (std::find(mapLumps.begin(), mapLumps.end(), iter->lumpName) != mapLumps.end()) {
             continue;
         }
 
-        LumpModel *newModel = [LumpModel new];
-        
-        newModel.name = [NSString stringWithUTF8String:iter->lumpName.c_str()];
-        newModel.offset = iter->lumpOffset;
-        newModel.size = iter->lumpSize;
-        newModel.about = @"about";
-        
-        [lumpsList addObject:newModel];
+        [lumpsList addObject:[self createLumpModelWithIter:iter]];
     }
     
     return [lumpsList copy];
@@ -72,14 +65,7 @@
             continue;
         }
         
-        LumpModel *newModel = [LumpModel new];
-        
-        newModel.name = [NSString stringWithUTF8String:iter->lumpName.c_str()];
-        newModel.offset = iter->lumpOffset;
-        newModel.size = iter->lumpSize;
-        newModel.about = @"about";
-        
-        [lumpsList addObject:newModel];
+        [lumpsList addObject:[self createLumpModelWithIter:iter]];
     }
     
     return [lumpsList copy];
@@ -93,17 +79,21 @@
     
     spcWAD::TLumpsList lowLevelLumpsList = self.wadTools->lumpsList();
     for (spcWAD::TLumpsListConstIter iter = lowLevelLumpsList.begin(); iter != lowLevelLumpsList.end(); iter++) {
-        LumpModel *newModel = [LumpModel new];
-        
-        newModel.name = [NSString stringWithUTF8String:iter->lumpName.c_str()];
-        newModel.offset = iter->lumpOffset;
-        newModel.size = iter->lumpSize;
-        newModel.about = @"about";
-        
-        [lumpsList addObject:newModel];
+        [lumpsList addObject:[self createLumpModelWithIter:iter]];
     }
 
     return [lumpsList copy];
+}
+
+- (LumpModel *)createLumpModelWithIter:(spcWAD::TLumpsListConstIter)iter {
+    LumpModel *newModel = [LumpModel new];
+    
+    newModel.name = [NSString stringWithUTF8String:iter->lumpName.c_str()];
+    newModel.offset = iter->lumpOffset;
+    newModel.size = iter->lumpSize;
+    newModel.about = [NSString stringWithUTF8String:spcWAD::ALumpTools::lumpDescription(iter->lumpName).c_str()];
+
+    return newModel;
 }
 
 @end

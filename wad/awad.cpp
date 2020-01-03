@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <sstream>
 
 #include "awad.h"
 #include "alump.h"
@@ -112,22 +111,6 @@ const TLumpsList& AWAD::lumpsList() const
 }
 
 //=============================================================================
-
-std::list<std::string> AWAD::mapLumpsNames() const
-{
-    std::list<std::string> list = {"THINGS", "LINEDEFS", "SIDEDEFS", "VERTEXES", "SEGS", "SSECTORS", "NODES", "SECTORS", "REJECT", "BLOCKMAP"};
-    for (int episode = 1; episode < 5; episode++)
-    {
-        for (int level = 1; level < 10; level++)
-        {
-            std::stringstream stream;
-            stream << "E" << episode << "M" << level;
-            list.push_back(stream.str());
-        }
-    }
-    
-    return list;
-}
 
 void AWAD::exportLump(const ALump& lump, const std::string& folderToExport)
 {

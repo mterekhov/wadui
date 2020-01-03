@@ -604,9 +604,6 @@
                                     <action selector="showMarkersOnly:" target="lIs-fI-Q9A" id="p6n-RN-lnl"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Show in hex" id="OKp-79-VrB">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
                             <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>

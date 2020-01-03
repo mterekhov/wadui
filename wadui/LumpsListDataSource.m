@@ -51,9 +51,17 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
     [self.lumpsListTableView reloadData];
     AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
     appDelegate.window.title = @"wadui";
+    self.lumpsService = nil;
+}
+
+- (BOOL)canExport {
+    return !(self.lumpsService == nil);
 }
 
 - (void)exportSelectedLumps:(NSString *)path {
+    if (self.lumpsService == nil) {
+        return;
+    }
     NSLog(@"lumps list to export %@", self.lumpsListTableView.selectedRowIndexes);
     [self.lumpsListTableView.selectedRowIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
         [self.lumpsService exportLump:self.lumpsList[idx]

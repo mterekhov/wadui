@@ -76,6 +76,8 @@ public:
      @return result of comparison, true if prefix is the prefix of string and false in other cases
      */
     static bool stringPrefixCompare(const std::string& prefix, const std::string& string);
+
+    static bool stringPrefixCompare2(const std::string& prefix, const std::string& string);
 };
 
 //=============================================================================

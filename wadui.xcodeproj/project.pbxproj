@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C65A02923BE9FFA00E15DF6 /* alumptools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C65A02723BE9FFA00E15DF6 /* alumptools.cpp */; };
 		4CCDF0EC23AD4FED001D11CE /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */; };
 		4CCDF0EE23AD4FEE001D11CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0ED23AD4FEE001D11CE /* Assets.xcassets */; };
 		4CCDF0F123AD4FEE001D11CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EF23AD4FEE001D11CE /* MainMenu.xib */; };
@@ -37,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C65A02723BE9FFA00E15DF6 /* alumptools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = alumptools.cpp; sourceTree = "<group>"; };
+		4C65A02823BE9FFA00E15DF6 /* alumptools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alumptools.h; sourceTree = "<group>"; };
 		4CCDF0E723AD4FED001D11CE /* wadui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wadui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCDF0EA23AD4FED001D11CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -148,15 +151,18 @@
 		4CCDF0FB23AD505A001D11CE /* wad */ = {
 			isa = PBXGroup;
 			children = (
+				4CCDF10323AD505A001D11CE /* autilities.h */,
+				4CCDF11523AD505A001D11CE /* autilities.cpp */,
+				4C65A02823BE9FFA00E15DF6 /* alumptools.h */,
+				4C65A02723BE9FFA00E15DF6 /* alumptools.cpp */,
+				4CCDF11823AD505A001D11CE /* awad.h */,
+				4CCDF10023AD505A001D11CE /* awad.cpp */,
 				4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */,
 				4CCDF0FD23AD505A001D11CE /* aflat.h */,
 				4CCDF0FE23AD505A001D11CE /* atexture.cpp */,
 				4CCDF0FF23AD505A001D11CE /* aflat.cpp */,
-				4CCDF11823AD505A001D11CE /* awad.h */,
-				4CCDF10023AD505A001D11CE /* awad.cpp */,
 				4CCDF10123AD505A001D11CE /* athing.cpp */,
 				4CCDF10223AD505A001D11CE /* aimagedata.h */,
-				4CCDF10323AD505A001D11CE /* autilities.h */,
 				4CCDF10423AD505A001D11CE /* acolormap.h */,
 				4CCDF10523AD505A001D11CE /* types.h */,
 				4CCDF10623AD505A001D11CE /* alump.h */,
@@ -174,7 +180,6 @@
 				4CCDF11223AD505A001D11CE /* apalete.cpp */,
 				4CCDF11323AD505A001D11CE /* alump.cpp */,
 				4CCDF11423AD505A001D11CE /* enums.h */,
-				4CCDF11523AD505A001D11CE /* autilities.cpp */,
 				4CCDF11623AD505A001D11CE /* apalete.h */,
 				4CCDF11723AD505A001D11CE /* apicture.h */,
 				4CCDF11923AD505A001D11CE /* aimagedata.cpp */,
@@ -282,6 +287,7 @@
 				4CCDF13323AD505A001D11CE /* alevel.cpp in Sources */,
 				4CCDF13923AD530F001D11CE /* LumpsListDataSource.m in Sources */,
 				4CCDF12923AD505A001D11CE /* aendoom.cpp in Sources */,
+				4C65A02923BE9FFA00E15DF6 /* alumptools.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

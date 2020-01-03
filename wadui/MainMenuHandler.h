@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showMarkersOnly;
 - (void)hideMaps;
 - (void)showAll;
+- (BOOL)canExport;
 
 @end
 
