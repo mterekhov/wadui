@@ -98,6 +98,7 @@
                                     <action selector="exportSelectedLumps:" target="lIs-fI-Q9A" id="Hfg-ek-vLz"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Export as image…" keyEquivalent="i" id="UeN-37-TbE"/>
                         </items>
                     </menu>
                 </menuItem>
@@ -679,7 +680,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uty-1e-yeg">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
@@ -856,13 +857,37 @@
                     <constraint firstItem="uty-1e-yeg" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="yxC-Jd-ZlB"/>
                 </constraints>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="6664DA88-BAB1-4EDE-8AFE-3D4AD0B4C770" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="mZx-Vp-43f">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="DD7F9722-E8E9-4F9D-916D-3F30BD4F9A71" label="" paletteLabel="Custom View" sizingBehavior="auto" id="iaj-xE-437">
+                        <nil key="toolTip"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="Hwe-dv-YsC">
+                            <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="psl-sP-SK6">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                        </searchField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="THT-5l-NeK"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="7Gm-Rk-tPS"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="t0K-Jj-82O"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="9RZ-Bz-4YR"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Qfv-wJ-xYO"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="iaj-xE-437"/>
+                </defaultToolbarItems>
+            </toolbar>
         </window>
         <customObject id="Wmz-ap-gtp" userLabel="LumpsListDataSource" customClass="LumpsListDataSource">
             <connections>
                 <outlet property="lumpsListTableView" destination="0XX-r9-f6N" id="AIQ-hY-jHr"/>
             </connections>
         </customObject>
-        <customObject id="lIs-fI-Q9A" customClass="MainMenuHandler">
+        <customObject id="lIs-fI-Q9A" customClass="UIEventsHandler">
             <connections>
                 <outlet property="delegate" destination="Wmz-ap-gtp" id="9po-v8-MFf"/>
             </connections>

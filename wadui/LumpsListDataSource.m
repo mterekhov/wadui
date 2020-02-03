@@ -9,7 +9,7 @@
 #import "LumpsListDataSource.h"
 #import "LumpsService.h"
 #import "LumpModel.h"
-#import "MainMenuHandler.h"
+#import "UIEventsHandler.h"
 #import "AppDelegate.h"
 
 static const NSString *LumpsListNameCellID = @"LumpsListNameCellID";
@@ -17,7 +17,7 @@ static const NSString *LumpsListSizeCellID = @"LumpsListSizeCellID";
 static const NSString *LumpsListOffsetCellID = @"LumpsListOffsetCellID";
 static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
 
-@interface LumpsListDataSource ()<MainMenuHandlerDelegate>
+@interface LumpsListDataSource ()<UIEventsHandlerDelegate>
 
 @property (nonatomic, strong, nullable) NSArray<LumpModel *> *lumpsList;
 
@@ -62,7 +62,18 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
     if (self.lumpsService == nil) {
         return;
     }
-    NSLog(@"lumps list to export %@", self.lumpsListTableView.selectedRowIndexes);
+
+    [self.lumpsListTableView.selectedRowIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.lumpsService exportLump:self.lumpsList[idx]
+                           folderPath:path];
+    }];
+}
+
+- (void)exportSelectedLumpsAsImage:(NSString *)path {
+    if (self.lumpsService == nil) {
+        return;
+    }
+    
     [self.lumpsListTableView.selectedRowIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
         [self.lumpsService exportLump:self.lumpsList[idx]
                            folderPath:path];

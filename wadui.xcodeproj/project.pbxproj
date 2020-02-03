@@ -34,7 +34,7 @@
 		4CCDF13923AD530F001D11CE /* LumpsListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13823AD530F001D11CE /* LumpsListDataSource.m */; };
 		4CCDF13C23AD532A001D11CE /* LumpsService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13B23AD532A001D11CE /* LumpsService.mm */; };
 		4CCDF13F23AD537C001D11CE /* LumpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13E23AD537C001D11CE /* LumpModel.m */; };
-		4CCDF14223AD6112001D11CE /* MainMenuHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF14123AD6112001D11CE /* MainMenuHandler.m */; };
+		4CCDF14223AD6112001D11CE /* UIEventsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF14123AD6112001D11CE /* UIEventsHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,8 +92,8 @@
 		4CCDF13B23AD532A001D11CE /* LumpsService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LumpsService.mm; sourceTree = "<group>"; };
 		4CCDF13D23AD537C001D11CE /* LumpModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumpModel.h; sourceTree = "<group>"; };
 		4CCDF13E23AD537C001D11CE /* LumpModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LumpModel.m; sourceTree = "<group>"; };
-		4CCDF14023AD6111001D11CE /* MainMenuHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuHandler.h; sourceTree = "<group>"; };
-		4CCDF14123AD6112001D11CE /* MainMenuHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuHandler.m; sourceTree = "<group>"; };
+		4CCDF14023AD6111001D11CE /* UIEventsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIEventsHandler.h; sourceTree = "<group>"; };
+		4CCDF14123AD6112001D11CE /* UIEventsHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIEventsHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,8 @@
 			children = (
 				4CCDF0EA23AD4FED001D11CE /* AppDelegate.h */,
 				4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */,
-				4CCDF14023AD6111001D11CE /* MainMenuHandler.h */,
-				4CCDF14123AD6112001D11CE /* MainMenuHandler.m */,
+				4CCDF14023AD6111001D11CE /* UIEventsHandler.h */,
+				4CCDF14123AD6112001D11CE /* UIEventsHandler.m */,
 				4CCDF0ED23AD4FEE001D11CE /* Assets.xcassets */,
 				4CCDF0EF23AD4FEE001D11CE /* MainMenu.xib */,
 				4CCDF0F223AD4FEE001D11CE /* Info.plist */,
@@ -159,7 +159,6 @@
 				4CCDF10023AD505A001D11CE /* awad.cpp */,
 				4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */,
 				4CCDF0FD23AD505A001D11CE /* aflat.h */,
-				4CCDF0FE23AD505A001D11CE /* atexture.cpp */,
 				4CCDF0FF23AD505A001D11CE /* aflat.cpp */,
 				4CCDF10123AD505A001D11CE /* athing.cpp */,
 				4CCDF10223AD505A001D11CE /* aimagedata.h */,
@@ -170,6 +169,7 @@
 				4CCDF10823AD505A001D11CE /* acolormap.cpp */,
 				4CCDF10923AD505A001D11CE /* aendoom.cpp */,
 				4CCDF10A23AD505A001D11CE /* atexture.h */,
+				4CCDF0FE23AD505A001D11CE /* atexture.cpp */,
 				4CCDF10B23AD505A001D11CE /* atgaexporter.h */,
 				4CCDF10C23AD505A001D11CE /* ademo.cpp */,
 				4CCDF10D23AD505A001D11CE /* apicture.cpp */,
@@ -281,7 +281,7 @@
 				4CCDF12523AD505A001D11CE /* aflat.cpp in Sources */,
 				4CCDF12C23AD505A001D11CE /* apalete.cpp in Sources */,
 				4CCDF12E23AD505A001D11CE /* autilities.cpp in Sources */,
-				4CCDF14223AD6112001D11CE /* MainMenuHandler.m in Sources */,
+				4CCDF14223AD6112001D11CE /* UIEventsHandler.m in Sources */,
 				4CCDF12423AD505A001D11CE /* atexture.cpp in Sources */,
 				4CCDF12A23AD505A001D11CE /* ademo.cpp in Sources */,
 				4CCDF13323AD505A001D11CE /* alevel.cpp in Sources */,

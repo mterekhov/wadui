@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<LumpModel *> *)lumpsListWithoutMaps;
 - (NSArray<LumpModel *> *)lumpsListWithMarkersOnly;
 - (void)exportLump:(LumpModel *)model folderPath:(NSString *)folderPath;
+- (void)exportLumpAsImage:(LumpModel *)model folderPath:(NSString *)folderPath;
 
 @end
 

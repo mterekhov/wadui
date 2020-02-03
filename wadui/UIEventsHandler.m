@@ -6,10 +6,10 @@
 //  Copyright © 2019 Michael. All rights reserved.
 //
 
-#import "MainMenuHandler.h"
+#import "UIEventsHandler.h"
 #import <Cocoa/Cocoa.h>
 
-@implementation MainMenuHandler
+@implementation UIEventsHandler
 
 - (IBAction)openDocument:(id)sender {
     NSOpenPanel* openDialog = [NSOpenPanel openPanel];
@@ -51,6 +51,25 @@
     }
     
     [self.delegate showMarkersOnly];
+}
+
+- (IBAction)exportAsImage:(id)sender {
+    if (self.delegate == nil) {
+        return;
+    }
+    
+    if (![self.delegate canExport]) {
+        return;
+    }
+    NSOpenPanel* openDialog = [NSOpenPanel openPanel];
+    openDialog.canChooseDirectories = YES;
+    openDialog.canChooseFiles = NO;
+    if ([openDialog runModal] == NSModalResponseOK) {
+        if (!self.delegate) {
+            return;
+        }
+        [self.delegate exportSelectedLumpsAsImage:openDialog.URLs.firstObject.path];
+    }
 }
 
 - (IBAction)exportSelectedLumps:(id)sender {

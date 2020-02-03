@@ -27,12 +27,21 @@
     return self;
 }
 
-- (void)exportLump:(LumpModel *)model folderPath:(NSString *)folderPath {
-    spcWAD::ALump exportLump(model.size, model.offset, model.name.UTF8String);
-    self.wadTools->exportLump(exportLump, folderPath.UTF8String);
-}
-
 #pragma mark - LumpsServiceProtocol -
+
+- (NSArray<LumpModel *> *)lumpsList {
+    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+    if (!self.wadTools) {
+        return [lumpsList copy];
+    }
+    
+    spcWAD::TLumpsList lowLevelLumpsList = self.wadTools->lumpsList();
+    for (spcWAD::TLumpsListConstIter iter = lowLevelLumpsList.begin(); iter != lowLevelLumpsList.end(); iter++) {
+        [lumpsList addObject:[self createLumpModelWithIter:iter]];
+    }
+    
+    return [lumpsList copy];
+}
 
 - (NSArray<LumpModel *> *)lumpsListWithoutMaps {
     NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
@@ -40,17 +49,7 @@
         return [lumpsList copy];
     }
     
-    std::list<std::string> mapLumps = spcWAD::ALumpTools::doom1MapLumpsNames();
-    spcWAD::TLumpsList lowLevelLumpsList = self.wadTools->lumpsList();
-    for (spcWAD::TLumpsListConstIter iter = lowLevelLumpsList.begin(); iter != lowLevelLumpsList.end(); iter++) {
-        if (std::find(mapLumps.begin(), mapLumps.end(), iter->lumpName) != mapLumps.end()) {
-            continue;
-        }
-
-        [lumpsList addObject:[self createLumpModelWithIter:iter]];
-    }
-    
-    return [lumpsList copy];
+    return [self lumpsListWithNameFilter:spcWAD::ALumpTools::doom1MapLumpsNames()];
 }
 
 - (NSArray<LumpModel *> *)lumpsListWithMarkersOnly {
@@ -71,19 +70,17 @@
     return [lumpsList copy];
 }
 
-- (NSArray<LumpModel *> *)lumpsList {
-    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
-    if (!self.wadTools) {
-        return [lumpsList copy];
-    }
-    
-    spcWAD::TLumpsList lowLevelLumpsList = self.wadTools->lumpsList();
-    for (spcWAD::TLumpsListConstIter iter = lowLevelLumpsList.begin(); iter != lowLevelLumpsList.end(); iter++) {
-        [lumpsList addObject:[self createLumpModelWithIter:iter]];
-    }
-
-    return [lumpsList copy];
+- (void)exportLump:(LumpModel *)model folderPath:(NSString *)folderPath {
+    spcWAD::ALump exportLump(model.size, model.offset, model.name.UTF8String);
+    self.wadTools->exportLump(exportLump, folderPath.UTF8String);
 }
+
+- (void)exportLumpAsImage:(LumpModel *)model folderPath:(NSString *)folderPath {
+    spcWAD::ALump exportLump(model.size, model.offset, model.name.UTF8String);
+    self.wadTools->exportLump(exportLump, folderPath.UTF8String);
+}
+
+#pragma mark - Routine -
 
 - (LumpModel *)createLumpModelWithIter:(spcWAD::TLumpsListConstIter)iter {
     LumpModel *newModel = [LumpModel new];
@@ -91,9 +88,40 @@
     newModel.name = [NSString stringWithUTF8String:iter->lumpName.c_str()];
     newModel.offset = iter->lumpOffset;
     newModel.size = iter->lumpSize;
-    newModel.about = [NSString stringWithUTF8String:spcWAD::ALumpTools::lumpDescription(iter->lumpName).c_str()];
+    newModel.about = [NSString stringWithUTF8String:spcWAD::ALumpTools::lumpDescription(iter->lumpName).description.c_str()];
 
     return newModel;
+}
+
+- (NSArray<LumpModel *> *)lumpsListWithNameFilter:(std::list<std::string>) filtersList{
+    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+    if (!self.wadTools) {
+        return [lumpsList copy];
+    }
+    
+    spcWAD::TLumpsList lowLevelLumpsList = self.wadTools->lumpsList();
+    for (spcWAD::TLumpsListConstIter iter = lowLevelLumpsList.begin(); iter != lowLevelLumpsList.end(); iter++) {
+        if (std::find(filtersList.begin(), filtersList.end(), iter->lumpName) != filtersList.end()) {
+            continue;
+        }
+        
+        [lumpsList addObject:[self createLumpModelWithIter:iter]];
+    }
+    
+    return [lumpsList copy];
+}
+
+- (std::list<std::string>)createCPPFilterWithObjcFilter:(NSArray<NSString *> *)objcFilter {
+    std::list<std::string> mapLumps;
+    if (objcFilter.count == 0) {
+        return mapLumps;
+    }
+    
+    for (NSString *filterString in objcFilter) {
+        mapLumps.push_back([filterString UTF8String]);
+    }
+    
+    return mapLumps;
 }
 
 @end
