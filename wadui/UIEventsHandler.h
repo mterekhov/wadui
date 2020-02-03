@@ -6,7 +6,7 @@
 //  Copyright © 2019 Michael. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,10 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hideMaps;
 - (void)showAll;
 - (BOOL)canExport;
+- (void)searchWithText:(NSString *)text;
 
 @end
 
-@interface UIEventsHandler : NSObject
+@interface UIEventsHandler : NSObject<NSSearchFieldDelegate>
 
 @property (weak, nonatomic, nullable) IBOutlet id<UIEventsHandlerDelegate> delegate;
 

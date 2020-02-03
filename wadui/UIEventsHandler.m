@@ -7,9 +7,23 @@
 //
 
 #import "UIEventsHandler.h"
-#import <Cocoa/Cocoa.h>
 
 @implementation UIEventsHandler
+
+
+- (void)controlTextDidEndEditing:(NSNotification *)obj
+{
+    if (!self.delegate) {
+        return;
+    }
+    
+    if (![obj.object isKindOfClass:[NSSearchField class]]) {
+        return;
+    }
+    
+    NSSearchField *searchField = obj.object;
+    [self.delegate searchWithText:searchField.stringValue];
+}
 
 - (IBAction)openDocument:(id)sender {
     NSOpenPanel* openDialog = [NSOpenPanel openPanel];
