@@ -295,10 +295,6 @@ bool AWAD::readDemos(FILE* wadFile)
 
 bool AWAD::readFlats(FILE* wadFile)
 {
-//    //  read first part of flats
-//    if (!readFlatsRange(wadFile, "F1_START", "F1_END"))
-//        return false;
-
     //  read second part of flats
     if (!readFlatsRange(wadFile, "F1_START", "F1_END"))
         return false;

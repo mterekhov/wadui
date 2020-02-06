@@ -13,7 +13,7 @@ TLumpsList AUtilities::findLumpsList(const std::string& lumpsNameMask, const TLu
 	TLumpsList founded;
 	for (TLumpsListConstIter iter = lumpsList.begin(); iter != lumpsList.end(); iter++)
 	{
-		if (AUtilities::stringPrefixCompare(lumpsNameMask, iter->lumpName))
+		if (AUtilities::stringContainsSubstring(lumpsNameMask, iter->lumpName))
 		{
 			founded.push_back(*iter);
 		}
@@ -75,6 +75,10 @@ bool AUtilities::readLumpData(FILE* wadFile, const ALump& lumpToRead, unsigned c
 
 bool AUtilities::stringCompare(const std::string& one, const std::string& two)
 {
+    if (one.length() != two.length()) {
+        return false;
+    }
+    
 	std::string oneCase;
 	oneCase.resize(one.size());
 	std::transform(one.begin(),
@@ -98,13 +102,13 @@ bool AUtilities::stringCompare(const std::string& one, const std::string& two)
 
 //=============================================================================
 
-bool AUtilities::stringPrefixCompare(const std::string& prefix, const std::string& string)
+bool AUtilities::stringContainsSubstring(const std::string& string, const std::string& substring)
 {
-	std::string prefixCase;
-	prefixCase.resize(prefix.size());
-	std::transform(prefix.begin(),
-				   prefix.end(),
-				   prefixCase.begin(),
+	std::string substringCase;
+	substringCase.resize(substring.size());
+	std::transform(substring.begin(),
+				   substring.end(),
+				   substringCase.begin(),
 				   ::tolower);
 
 	std::string stringCase;
@@ -113,39 +117,13 @@ bool AUtilities::stringPrefixCompare(const std::string& prefix, const std::strin
 				   string.end(),
 				   stringCase.begin(),
 				   ::tolower);
-	
-	if (stringCase.rfind(prefixCase, 0) == 0)
+
+    if (stringCase.find(substringCase) != std::string::npos)
 	{
 		return true;
 	}
 
 	return false;
-}
-
-//=============================================================================
-
-bool AUtilities::stringPrefixCompare2(const std::string& prefix, const std::string& string)
-{
-    std::string prefixCase;
-    prefixCase.resize(prefix.size());
-    std::transform(prefix.begin(),
-                   prefix.end(),
-                   prefixCase.begin(),
-                   ::tolower);
-    
-    std::string stringCase;
-    stringCase.resize(string.size());
-    std::transform(string.begin(),
-                   string.end(),
-                   stringCase.begin(),
-                   ::tolower);
-    
-    if (std::mismatch(stringCase.begin(),stringCase.end(),prefixCase.begin()).first == stringCase.end())
-    {
-        return true;
-    }
-    
-    return false;
 }
 
 //=============================================================================
