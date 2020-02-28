@@ -4,7 +4,6 @@
 //=============================================================================
 
 #include <string>
-
 #include "aimagedata.h"
 
 //=============================================================================
@@ -24,8 +23,8 @@ class APalete;
 class AFlat
 {
 public:
-	AFlat(unsigned char* incomingData, const std::string& incomingName, const APalete& palete);
-	AFlat(const AFlat& flat);
+    AFlat(FILE* wadFile, const ALump& lump, const APalete& palete);
+    AFlat(const AFlat& flat);
     ~AFlat();
 	AFlat& operator=(const AFlat& rv);
 

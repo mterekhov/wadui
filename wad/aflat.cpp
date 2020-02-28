@@ -1,6 +1,7 @@
 #include "aflat.h"
 #include "apalete.h"
 #import "atgaexporter.h"
+#import "alumptools.h"
 
 //=============================================================================
 
@@ -9,9 +10,14 @@ namespace spcWAD
 
 //=============================================================================
 
-AFlat::AFlat(unsigned char* incomingData, const std::string& incomingName, const APalete& palete) : _imageData(64, 64), _flatName(incomingName)
+AFlat::AFlat(FILE* wadFile, const ALump& lump, const APalete& palete) : _imageData(64, 64), _flatName(lump.lumpName)
 {
-    convertData(incomingData, palete);
+    if (lump.lumpSize)
+    {
+        unsigned char *flatData = new unsigned char [lump.lumpSize];
+        ALumpTools::readLumpData(wadFile, lump, flatData);
+        convertData(flatData, palete);
+    }
 }
 
 //=============================================================================

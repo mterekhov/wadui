@@ -18,8 +18,8 @@ namespace spcWAD
 class ADemo
 {
 public:
-    ADemo(unsigned char* incomingData, const int incomingSize, const std::string& incomingName);
-	ADemo(const ADemo& demo);
+    ADemo();
+    ADemo(FILE* wadFile, const ALump& lump);
     ~ADemo();
 	ADemo& operator=(const ADemo& rv);
 

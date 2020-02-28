@@ -263,14 +263,7 @@ bool AWAD::readDemos(FILE* wadFile)
 			continue;
 		}
 		const ALump& demoLump = *demoLumpIter;
-
-		unsigned char *lumpData = new unsigned char [demoLump.lumpSize];
-		ALumpTools::readLumpData(wadFile, demoLump, lumpData);
-
-		ADemo newDemo(lumpData, demoLump.lumpSize, demoLump.lumpName);
-		_demosList.push_back(newDemo);
-		
-		delete [] lumpData;
+		_demosList.push_back(ADemo(wadFile, demoLump));
 	}
 
 	return true;
@@ -301,13 +294,7 @@ bool AWAD::readFlatsRange(FILE* wadFile, const std::string& beginLumpName, const
 		for (TLumpsListConstIter iter = beginLump; iter != endLump; iter++)
 		{
 			ALump flatLump = (*iter);
-			unsigned char *lumpData = new unsigned char [flatLump.lumpSize];
-			ALumpTools::readLumpData(wadFile, flatLump, lumpData);
-			
-			AFlat newFlat(lumpData, flatLump.lumpName, _palete);
-			_flatsList.push_back(newFlat);
-			
-			delete [] lumpData;
+			_flatsList.push_back(AFlat(wadFile, flatLump, _palete));
 		}
     }
 

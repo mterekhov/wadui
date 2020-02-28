@@ -1,4 +1,5 @@
 #include "ademo.h"
+#include "alumptools.h"
 
 //=============================================================================
 
@@ -7,23 +8,19 @@ namespace spcWAD
 
 //=============================================================================
 
-ADemo::ADemo(unsigned char* incomingData, const int incomingSize, const std::string& incomingName) : _demoData(0), _demoSize(incomingSize), _demoName(incomingName)
+ADemo::ADemo() : _demoSize(0), _demoData(0)
 {
-	if (incomingSize)
-	{
-		_demoData = new unsigned char[incomingSize];
-		memcpy(_demoData, incomingData, incomingSize);
-    }
+    
 }
 
 //=============================================================================
 
-ADemo::ADemo(const ADemo& demo) : _demoData(0), _demoSize(demo._demoSize), _demoName(demo._demoName)
+ADemo::ADemo(FILE* wadFile, const ALump& lump) : _demoSize(lump.lumpSize)
 {
-	if (demo._demoSize)
-	{
-		_demoData = new unsigned char[demo._demoSize];
-		memcpy(_demoData, demo._demoData, demo._demoSize);
+    if (lump.lumpSize)
+    {
+        _demoData = new unsigned char [lump.lumpSize];
+        ALumpTools::readLumpData(wadFile, lump, _demoData);
     }
 }
 
