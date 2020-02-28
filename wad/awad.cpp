@@ -20,7 +20,7 @@ namespace spcWAD
     
 //=============================================================================
 
-AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(fileName), _palete(0, 0), _colorMap(0, 0), _enDoom(0, 0)
+AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(fileName)
 {
 	FILE* wadFile = 0;
 	wadFile = fopen(fileName.c_str(), "rb");
@@ -215,13 +215,9 @@ bool AWAD::readPalete(FILE* wadFile)
 	}
 	
 	const ALump& playpalLump = *playpalLumpIter;
-	unsigned char *lumpData = new unsigned char [playpalLump.lumpSize];
-	ALumpTools::readLumpData(wadFile, playpalLump, lumpData);
-	_palete = APalete(lumpData, playpalLump.lumpSize);
-	
-	delete [] lumpData;
+    _palete = APalete(wadFile, playpalLump);
 
-	return true;
+    return true;
 }
 
 //=============================================================================
@@ -234,15 +230,9 @@ bool AWAD::readColorMap(FILE* wadFile)
 		return false;
 	}
 	const ALump& colorMapLump = *colorMapLumpIter;
+	_colorMap = AColorMap(wadFile, colorMapLump);
 
-	unsigned char *lumpData = new unsigned char [colorMapLump.lumpSize];
-	ALumpTools::readLumpData(wadFile, colorMapLump, lumpData);
-
-	_colorMap = AColorMap(lumpData, colorMapLump.lumpSize);
-
-	delete [] lumpData;
-
-	return true;
+    return true;
 }
 
 //=============================================================================
@@ -255,15 +245,9 @@ bool AWAD::readEndDoom(FILE* wadFile)
 		return false;
 	}
 	const ALump& endoomLump = *endoomLumpIter;
+	_enDoom = AEnDoom(wadFile, endoomLump);
 
-	unsigned char *lumpData = new unsigned char [endoomLump.lumpSize];
-	ALumpTools::readLumpData(wadFile, endoomLump, lumpData);
-
-	_enDoom = AEnDoom(lumpData, endoomLump.lumpSize);
-
-	delete [] lumpData;
-
-	return true;
+    return true;
 }
 
 //=============================================================================

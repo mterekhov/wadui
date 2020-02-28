@@ -4,6 +4,7 @@
 //=============================================================================
 
 #include "alump.h"
+#include <stdio.h>
 
 //=============================================================================
 
@@ -18,7 +19,8 @@ namespace spcWAD
 class AColorMap
 {
 public:
-    AColorMap(unsigned char* incomingData, const int incomingSize);
+    AColorMap();
+    AColorMap(FILE* wadFile, const ALump& lump);
     ~AColorMap();
 	AColorMap& operator=(const AColorMap& rv);
 

@@ -4,6 +4,7 @@
 //=============================================================================
 
 #include "alump.h"
+#include <stdio.h>
 
 //=============================================================================
 
@@ -18,7 +19,8 @@ namespace spcWAD
 class AEnDoom
 {
 public:
-    AEnDoom(unsigned char* incomingData, const int incomingSize);
+    AEnDoom();
+    AEnDoom(FILE* wadFile, const ALump& lump);
     ~AEnDoom();
 	AEnDoom& operator=(const AEnDoom& rv);
 

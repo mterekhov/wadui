@@ -155,13 +155,13 @@
 				4CE65E4C24094294004F2370 /* alump.h */,
 				4CE65E4324094294004F2370 /* asprite.cpp */,
 				4CE65E4524094294004F2370 /* asprite.h */,
-				4CE65E3D24094270004F2370 /* awad.cpp */,
 				4CE65E4024094270004F2370 /* awad.h */,
+				4CE65E3D24094270004F2370 /* awad.cpp */,
 				4CE65E3E24094270004F2370 /* enums.h */,
 				4CE65E3F24094270004F2370 /* types.h */,
+				4CE65E19240941FA004F2370 /* lumps */,
 				4CE65E1B24094205004F2370 /* level */,
 				4CE65E1A24094200004F2370 /* services */,
-				4CE65E19240941FA004F2370 /* lumps */,
 			);
 			name = wad;
 			sourceTree = "<group>";
@@ -169,20 +169,20 @@
 		4CE65E19240941FA004F2370 /* lumps */ = {
 			isa = PBXGroup;
 			children = (
-				4CE65E2024094246004F2370 /* acolormap.cpp */,
+				4CE65E2124094246004F2370 /* apalete.h */,
+				4CE65E2924094246004F2370 /* apalete.cpp */,
 				4CE65E2224094246004F2370 /* acolormap.h */,
+				4CE65E2024094246004F2370 /* acolormap.cpp */,
+				4CE65E2324094246004F2370 /* aendoom.h */,
+				4CE65E2424094246004F2370 /* aendoom.cpp */,
 				4CE65E1D24094245004F2370 /* ademo.cpp */,
 				4CE65E2624094246004F2370 /* ademo.h */,
-				4CE65E2424094246004F2370 /* aendoom.cpp */,
-				4CE65E2324094246004F2370 /* aendoom.h */,
-				4CE65E1E24094245004F2370 /* aflat.cpp */,
-				4CE65E1F24094245004F2370 /* aflat.h */,
-				4CE65E2924094246004F2370 /* apalete.cpp */,
-				4CE65E2124094246004F2370 /* apalete.h */,
-				4CE65E2524094246004F2370 /* apicture.cpp */,
-				4CE65E1C24094245004F2370 /* apicture.h */,
 				4CE65E2724094246004F2370 /* atexture.cpp */,
 				4CE65E2824094246004F2370 /* atexture.h */,
+				4CE65E1E24094245004F2370 /* aflat.cpp */,
+				4CE65E1F24094245004F2370 /* aflat.h */,
+				4CE65E2524094246004F2370 /* apicture.cpp */,
+				4CE65E1C24094245004F2370 /* apicture.h */,
 			);
 			name = lumps;
 			sourceTree = "<group>";

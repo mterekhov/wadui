@@ -1,4 +1,5 @@
 #include "apalete.h"
+#include "alumptools.h"
 
 //=============================================================================
 
@@ -6,13 +7,20 @@ namespace spcWAD
 {
 
 //=============================================================================
-
-APalete::APalete(unsigned char* incomingData, const int incomingSize) : _paleteData(0), _paleteSize(incomingSize)
+    
+APalete::APalete() : _paleteSize(0), _paleteData(0)
 {
-	if (incomingSize)
-	{
-		_paleteData = new unsigned char[incomingSize];
-		memcpy(_paleteData, incomingData, incomingSize);
+    
+}
+
+//=============================================================================
+    
+APalete::APalete(FILE* wadFile, const ALump& lump) : _paleteSize(lump.lumpSize)
+{
+    if (lump.lumpSize)
+    {
+        _paleteData = new unsigned char [lump.lumpSize];
+        ALumpTools::readLumpData(wadFile, lump, _paleteData);
     }
 }
 
@@ -24,7 +32,7 @@ APalete::~APalete()
 }
 
 //=============================================================================
-
+    
 void APalete::destroy()
 {
 	if (_paleteSize)

@@ -1,4 +1,5 @@
 #include "aendoom.h"
+#include "alumptools.h"
 
 //=============================================================================
 
@@ -7,12 +8,19 @@ namespace spcWAD
 
 //=============================================================================
 
-AEnDoom::AEnDoom(unsigned char* incomingData, const int incomingSize) : _endoomData(0), _endoomSize(incomingSize)
+AEnDoom::AEnDoom() : _endoomSize(0), _endoomData(0)
 {
-	if (incomingSize)
-	{
-		_endoomData = new unsigned char[incomingSize];
-		memcpy(_endoomData, incomingData, incomingSize);
+    
+}
+
+//=============================================================================
+
+AEnDoom::AEnDoom(FILE* wadFile, const ALump& lump) : _endoomSize(lump.lumpSize)
+{
+    if (lump.lumpSize)
+    {
+        _endoomData = new unsigned char [lump.lumpSize];
+        ALumpTools::readLumpData(wadFile, lump, _endoomData);
     }
 }
 

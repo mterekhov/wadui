@@ -3,6 +3,7 @@
 
 //=============================================================================
 
+#include <stdio.h>
 #include "alump.h"
 
 //=============================================================================
@@ -13,12 +14,13 @@ namespace spcWAD
 //=============================================================================
 
 /**
-	This class operates with palette for all images in resources
+	This class operates with palette for all images in resources, aka PLAYPAL lump
 */
 class APalete
 {
 public:
-    APalete(unsigned char* incomingData, const int incomingSize);
+    APalete();
+    APalete(FILE* wadFile, const ALump& lump);
     ~APalete();
 	APalete& operator=(const APalete& rv);
 
@@ -30,6 +32,7 @@ private:
 	int _paleteSize;
     unsigned char* _paleteData;
 	
+    void init(unsigned char* incomingData, const int incomingSize);
     void destroy();
 };
 

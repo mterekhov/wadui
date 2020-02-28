@@ -1,4 +1,5 @@
 #include "acolormap.h"
+#include "alumptools.h"
 
 //=============================================================================
 
@@ -6,13 +7,20 @@ namespace spcWAD
 {
 
 //=============================================================================
-
-AColorMap::AColorMap(unsigned char* incomingData, const int incomingSize) : _mapcolorData(0), _mapcolorSize(incomingSize)
+    
+AColorMap::AColorMap() : _mapcolorSize(0), _mapcolorData(0)
 {
-	if (incomingSize)
-	{
-		_mapcolorData = new unsigned char[incomingSize];
-		memcpy(_mapcolorData, incomingData, incomingSize);
+    
+}
+
+//=============================================================================
+
+AColorMap::AColorMap(FILE* wadFile, const ALump& lump) : _mapcolorSize(lump.lumpSize)
+{
+    if (lump.lumpSize)
+    {
+        _mapcolorData = new unsigned char [lump.lumpSize];
+        ALumpTools::readLumpData(wadFile, lump, _mapcolorData);
     }
 }
 
