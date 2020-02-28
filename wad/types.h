@@ -6,6 +6,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include "apicture.h"
 
 //=============================================================================
 
@@ -21,7 +22,6 @@ namespace spcWAD
 class ALump;
 class ADemo;
 class AFlat;
-class APicture;
 class ATexture;
 class AThing;
 class ASprite;
@@ -36,7 +36,7 @@ struct SPatchDescription
 	int x_offset;
 	int y_offset;
 
-	APicture& patch;
+	APicture patch;
 };
 
 //=============================================================================

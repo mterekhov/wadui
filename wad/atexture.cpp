@@ -3,8 +3,8 @@
 #include "aflat.h"
 #include "atgaexporter.h"
 #include "apicture.h"
-
 #include <stdlib.h>
+#include "alumptools.h"
 
 //=============================================================================
 
@@ -13,12 +13,78 @@ namespace spcWAD
 
 //=============================================================================
 
-ATexture::ATexture(const TPatchesDescriptionList& patchesDescriptionList, const std::string& incomingName, const int incomingWidth, const int incomingHeight) : _imageData(incomingWidth, incomingHeight), _textureName(incomingName)
+ATexture::ATexture(FILE* wadFile, const ALump& lump, const TIndexedPicturesList& patchesList)
+{
+    if (lump.lumpSize)
+    {
+        unsigned char *lumpData = new unsigned char [lump.lumpSize];
+        ALumpTools::readLumpData(wadFile, lump, lumpData);
+        TPatchesDescriptionList patchesDescription = readTextureMetaData(lumpData, patchesList);
+        generateFinalImage(patchesDescription);
+    }
+}
+
+//=============================================================================
+
+TPatchesDescriptionList ATexture::readTextureMetaData(unsigned char *incomingData, const TIndexedPicturesList& patchesList)
+{
+    int bytesOffset = 0;
+    char textureName[9] = {0};
+    memcpy(textureName, &incomingData[bytesOffset], 8);
+    _textureName = textureName;
+    
+    bytesOffset += 8;
+    bytesOffset += 4;    //    skiping 4 bytes
+    short textureWidth = 0;
+    memcpy(&textureWidth, &incomingData[bytesOffset], 2);
+    bytesOffset += 2;
+    short textureHeight = 0;
+    memcpy(&textureHeight, &incomingData[bytesOffset], 2);
+    bytesOffset += 2;
+    _imageData = AImageData(textureWidth, textureHeight);
+
+    bytesOffset += 4;    //    skiping 4 bytes
+    short texturePatchNumbers = 0;
+    memcpy(&texturePatchNumbers, &incomingData[bytesOffset], 2);
+    bytesOffset += 2;
+    
+    TPatchesDescriptionList patchesDescriptionList;
+    for (int patchIndex = 0; patchIndex < texturePatchNumbers; patchIndex++)
+    {
+        short xOffset = 0;
+        memcpy(&xOffset, &incomingData[bytesOffset], 2);
+        bytesOffset += 2;
+        
+        short yOffset = 0;
+        memcpy(&yOffset, &incomingData[bytesOffset], 2);
+        bytesOffset += 2;
+        
+        int patchIndexInPatchDirectory = 0;
+        memcpy(&patchIndexInPatchDirectory, &incomingData[bytesOffset], 2);
+        bytesOffset += 2;
+        bytesOffset += 4;    //    skiping 4 bytes
+        
+        if ((patchIndexInPatchDirectory > patchesList.size()) || (patchIndexInPatchDirectory < 0))
+        {
+            printf("\t\t\t%s can not be created because patch does not exist\n", textureName);
+            continue;
+        }
+        
+        SPatchDescription newDescription = {xOffset, yOffset, patchesList[patchIndexInPatchDirectory]};
+        patchesDescriptionList.push_back(newDescription);
+    }
+    
+    return patchesDescriptionList;
+}
+
+//=============================================================================
+
+void ATexture::generateFinalImage(TPatchesDescriptionList& patchesDescriptionList)
 {
     unsigned char *textureData = _imageData.data();
-	for (TPatchesDescriptionListConstIter iter = patchesDescriptionList.begin(); iter != patchesDescriptionList.end(); iter++)
+	for (TPatchesDescriptionListIter iter = patchesDescriptionList.begin(); iter != patchesDescriptionList.end(); iter++)
 	{
-		const SPatchDescription& patchDescription = *iter;
+		SPatchDescription& patchDescription = *iter;
 
 		//	Соотнесем размер патча и размер текстуры в которую суем его
 		//	Ну чтобы не получилось что патч больше текстуры по размерам
@@ -51,7 +117,7 @@ ATexture::ATexture(const TPatchesDescriptionList& patchesDescriptionList, const 
 			patchChunkWidth = _imageData.width() - injectionX;
 		}
 
-		const unsigned char* flatData = patchDescription.patch.imageData.data();
+		unsigned char* flatData = patchDescription.patch.imageData.data();
 		for (int y = injectionY; y < injectionY + patchChunkHeight; y++)
 		{
 			for (int x = injectionX; x < injectionX + patchChunkWidth; x++)

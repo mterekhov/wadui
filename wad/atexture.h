@@ -22,7 +22,7 @@ namespace spcWAD
 class ATexture
 {
 public:
-    ATexture(const TPatchesDescriptionList& patchesDescriptionList, const std::string& incomingName, const int incomingWidth, const int incomingHeight);
+    ATexture(FILE* wadFile, const ALump& lump, const TIndexedPicturesList& patchesList);
 	ATexture(const ATexture& texture);
     ~ATexture();
 	ATexture& operator=(const ATexture& rv);
@@ -31,6 +31,8 @@ public:
 	std::string textureName() const;
 
 private:
+    TPatchesDescriptionList readTextureMetaData(unsigned char *incomingData, const TIndexedPicturesList& patchesList);
+    void generateFinalImage(TPatchesDescriptionList& patchesDescriptionList);
     std::string _textureName;
     AImageData _imageData;
 };

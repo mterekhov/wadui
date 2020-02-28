@@ -64,7 +64,8 @@ private:
 	bool readPatches(FILE* wadFile);
 	bool readTextures(FILE* wadFile);
 	ATexture generateSingleTexture(const int textureOffset, unsigned char *lumpData);
-	
+    ALump createTextureLump(const int textureOffset, unsigned char *lumpData);
+
 	bool readLevel(FILE* wadFile);
 };
 

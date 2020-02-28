@@ -76,14 +76,14 @@ AWAD::AWAD(const std::string& fileName) : _type(WADTYPE_UNKNOWN), _fileName(file
 //        flat.saveFlatIntoTga(path);
 //    }
 //
-//    for (TTexturesListIter iter = _texturesList.begin(); iter != _texturesList.end(); iter++)
-//    {
-//        ATexture& texture = *iter;
-//        std::string path = "/Users/michael/Pictures/texture/";
-//        path += texture.textureName();
-//        path += ".tga";
-//        texture.saveTextureIntoTga(path);
-//    }
+    for (TTexturesListIter iter = _texturesList.begin(); iter != _texturesList.end(); iter++)
+    {
+        ATexture& texture = *iter;
+        std::string path = "/Users/michael/Pictures/texture/";
+        path += texture.textureName();
+        path += ".tga";
+        texture.saveTextureIntoTga(path);
+    }
 //
 //    int i = 0;
 //    for (TLumpsListIter iter = _tableOfContents.begin(); iter != _tableOfContents.end(); iter++)
@@ -384,7 +384,9 @@ bool AWAD::readTextures(FILE* wadFile)
 
 	for (std::vector<int>::iterator iter = texturesOffsetsList.begin(); iter != texturesOffsetsList.end(); iter++)
 	{
-		_texturesList.push_back(generateSingleTexture((*iter), lumpData));
+        ALump newTextureLump = createTextureLump((*iter), lumpData);
+        newTextureLump.lumpOffset = textureLump.lumpOffset + (*iter);
+        _texturesList.push_back(ATexture(wadFile, newTextureLump, _patchesList));
 	}
 	
 	delete [] lumpData;
@@ -393,57 +395,24 @@ bool AWAD::readTextures(FILE* wadFile)
 }
 
 //=============================================================================
-
-ATexture AWAD::generateSingleTexture(const int textureOffset, unsigned char *lumpData)
-{
-	int bytesOffset = textureOffset;
-	char textureName[9] = {0};
-	memcpy(textureName, &lumpData[bytesOffset], 8);
-	bytesOffset += 8;
-	bytesOffset += 4;	//	skiping 4 bytes
-	short textureWidth = 0;
-	memcpy(&textureWidth, &lumpData[bytesOffset], 2);
-	bytesOffset += 2;
-	short textureHeight = 0;
-	memcpy(&textureHeight, &lumpData[bytesOffset], 2);
-	bytesOffset += 2;
-	bytesOffset += 4;	//	skiping 4 bytes
-	short texturePatchNumbers = 0;
-	memcpy(&texturePatchNumbers, &lumpData[bytesOffset], 2);
-	bytesOffset += 2;
-
-	TPatchesDescriptionList patchesDescriptionList;
-	for (int patchIndex = 0; patchIndex < texturePatchNumbers; patchIndex++)
-	{
-		short xOffset = 0;
-		memcpy(&xOffset, &lumpData[bytesOffset], 2);
-		bytesOffset += 2;
-
-		short yOffset = 0;
-		memcpy(&yOffset, &lumpData[bytesOffset], 2);
-		bytesOffset += 2;
-		
-		int patchIndexInPatchDirectory = 0;
-		memcpy(&patchIndexInPatchDirectory, &lumpData[bytesOffset], 2);
-		bytesOffset += 2;
-		bytesOffset += 4;	//	skiping 4 bytes
-
-		if ((patchIndexInPatchDirectory > _patchesList.size()) || (patchIndexInPatchDirectory < 0))
-		{
-			printf("\t\t\t%s can not be created because patch does not exist\n", textureName);
-			continue;
-		}
-
-		SPatchDescription newDescription = {xOffset, yOffset, _patchesList[patchIndexInPatchDirectory]};
-		patchesDescriptionList.push_back(newDescription);
-	}
-	
-	ATexture newTexture(patchesDescriptionList, textureName, textureWidth, textureHeight);
-	return newTexture;
-}
-
-//=============================================================================
     
+ALump AWAD::createTextureLump(const int textureOffset, unsigned char *lumpData)
+{
+    //    every single texture size is 22 + [number of patches] * 10
+    int bytesOffset = textureOffset;
+    char textureName[9] = {0};
+    memcpy(textureName, &lumpData[bytesOffset], 8);
+    bytesOffset = textureOffset + 20;
+    
+    short texturePatchNumbers = 0;
+    memcpy(&texturePatchNumbers, &lumpData[bytesOffset], 2);
+    
+    ALump newLump(22 + 10 * texturePatchNumbers, 0, textureName);
+    return newLump;
+}
+    
+//=============================================================================
+
 ALevel AWAD::readLevel(const std::string& levelName)
 {
     TLumpsListConstIter levelLumpIter = ALumpTools::findLumpIter(levelName, _tableOfContents);
