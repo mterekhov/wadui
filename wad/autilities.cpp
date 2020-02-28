@@ -39,6 +39,11 @@ bool AUtilities::stringCompare(const std::string& one, const std::string& two)
 
 bool AUtilities::stringContainsSubstring(const std::string& string, const std::string& substring)
 {
+    if (substring.length() > string.length())
+    {
+        return false;
+    }
+    
 	std::string substringCase;
 	substringCase.resize(substring.size());
 	std::transform(substring.begin(),

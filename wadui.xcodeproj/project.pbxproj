@@ -7,39 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C65A02923BE9FFA00E15DF6 /* alumptools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C65A02723BE9FFA00E15DF6 /* alumptools.cpp */; };
 		4CCDF0EC23AD4FED001D11CE /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */; };
 		4CCDF0EE23AD4FEE001D11CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0ED23AD4FEE001D11CE /* Assets.xcassets */; };
 		4CCDF0F123AD4FEE001D11CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EF23AD4FEE001D11CE /* MainMenu.xib */; };
 		4CCDF0F423AD4FEE001D11CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0F323AD4FEE001D11CE /* main.m */; };
-		4CCDF12323AD505A001D11CE /* alevelintegrity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */; };
-		4CCDF12423AD505A001D11CE /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0FE23AD505A001D11CE /* atexture.cpp */; };
-		4CCDF12523AD505A001D11CE /* aflat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0FF23AD505A001D11CE /* aflat.cpp */; };
-		4CCDF12623AD505A001D11CE /* awad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10023AD505A001D11CE /* awad.cpp */; };
-		4CCDF12723AD505A001D11CE /* athing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10123AD505A001D11CE /* athing.cpp */; };
-		4CCDF12823AD505A001D11CE /* acolormap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10823AD505A001D11CE /* acolormap.cpp */; };
-		4CCDF12923AD505A001D11CE /* aendoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10923AD505A001D11CE /* aendoom.cpp */; };
-		4CCDF12A23AD505A001D11CE /* ademo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10C23AD505A001D11CE /* ademo.cpp */; };
-		4CCDF12B23AD505A001D11CE /* apicture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF10D23AD505A001D11CE /* apicture.cpp */; };
-		4CCDF12C23AD505A001D11CE /* apalete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11223AD505A001D11CE /* apalete.cpp */; };
-		4CCDF12D23AD505A001D11CE /* alump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11323AD505A001D11CE /* alump.cpp */; };
-		4CCDF12E23AD505A001D11CE /* autilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11523AD505A001D11CE /* autilities.cpp */; };
-		4CCDF12F23AD505A001D11CE /* aimagedata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11923AD505A001D11CE /* aimagedata.cpp */; };
-		4CCDF13023AD505A001D11CE /* ageometryreadservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11A23AD505A001D11CE /* ageometryreadservice.cpp */; };
-		4CCDF13223AD505A001D11CE /* asprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11D23AD505A001D11CE /* asprite.cpp */; };
-		4CCDF13323AD505A001D11CE /* alevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11E23AD505A001D11CE /* alevel.cpp */; };
-		4CCDF13423AD505A001D11CE /* atgaexporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF11F23AD505A001D11CE /* atgaexporter.cpp */; };
 		4CCDF13523AD505A001D11CE /* doom.wad in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF12123AD505A001D11CE /* doom.wad */; };
 		4CCDF13623AD505A001D11CE /* doom1.wad in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF12223AD505A001D11CE /* doom1.wad */; };
 		4CCDF13923AD530F001D11CE /* LumpsListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13823AD530F001D11CE /* LumpsListDataSource.m */; };
 		4CCDF13C23AD532A001D11CE /* LumpsService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13B23AD532A001D11CE /* LumpsService.mm */; };
 		4CCDF13F23AD537C001D11CE /* LumpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF13E23AD537C001D11CE /* LumpModel.m */; };
 		4CCDF14223AD6112001D11CE /* UIEventsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF14123AD6112001D11CE /* UIEventsHandler.m */; };
+		4CE65E2A24094246004F2370 /* ademo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E1D24094245004F2370 /* ademo.cpp */; };
+		4CE65E2B24094246004F2370 /* aflat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E1E24094245004F2370 /* aflat.cpp */; };
+		4CE65E2C24094246004F2370 /* acolormap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E2024094246004F2370 /* acolormap.cpp */; };
+		4CE65E2D24094246004F2370 /* aendoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E2424094246004F2370 /* aendoom.cpp */; };
+		4CE65E2E24094246004F2370 /* apicture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E2524094246004F2370 /* apicture.cpp */; };
+		4CE65E2F24094246004F2370 /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E2724094246004F2370 /* atexture.cpp */; };
+		4CE65E3024094246004F2370 /* apalete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E2924094246004F2370 /* apalete.cpp */; };
+		4CE65E392409425F004F2370 /* alumptools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E312409425F004F2370 /* alumptools.cpp */; };
+		4CE65E3A2409425F004F2370 /* ageometryreadservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E362409425F004F2370 /* ageometryreadservice.cpp */; };
+		4CE65E3B2409425F004F2370 /* autilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E372409425F004F2370 /* autilities.cpp */; };
+		4CE65E3C2409425F004F2370 /* atgaexporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E382409425F004F2370 /* atgaexporter.cpp */; };
+		4CE65E4124094270004F2370 /* awad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E3D24094270004F2370 /* awad.cpp */; };
+		4CE65E4E24094294004F2370 /* asprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E4324094294004F2370 /* asprite.cpp */; };
+		4CE65E4F24094294004F2370 /* alump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E4424094294004F2370 /* alump.cpp */; };
+		4CE65E5024094294004F2370 /* alevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E4724094294004F2370 /* alevel.cpp */; };
+		4CE65E5124094294004F2370 /* alevelintegrity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E4824094294004F2370 /* alevelintegrity.cpp */; };
+		4CE65E5224094294004F2370 /* aimagedata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E4924094294004F2370 /* aimagedata.cpp */; };
+		4CE65E5324094294004F2370 /* athing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CE65E4D24094294004F2370 /* athing.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C65A02723BE9FFA00E15DF6 /* alumptools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = alumptools.cpp; sourceTree = "<group>"; };
-		4C65A02823BE9FFA00E15DF6 /* alumptools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alumptools.h; sourceTree = "<group>"; };
 		4CCDF0E723AD4FED001D11CE /* wadui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wadui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCDF0EA23AD4FED001D11CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -48,42 +46,6 @@
 		4CCDF0F223AD4FEE001D11CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CCDF0F323AD4FEE001D11CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CCDF0F523AD4FEE001D11CE /* wadui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wadui.entitlements; sourceTree = "<group>"; };
-		4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alevelintegrity.cpp; sourceTree = "<group>"; };
-		4CCDF0FD23AD505A001D11CE /* aflat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aflat.h; sourceTree = "<group>"; };
-		4CCDF0FE23AD505A001D11CE /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = atexture.cpp; sourceTree = "<group>"; };
-		4CCDF0FF23AD505A001D11CE /* aflat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aflat.cpp; sourceTree = "<group>"; };
-		4CCDF10023AD505A001D11CE /* awad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = awad.cpp; sourceTree = "<group>"; };
-		4CCDF10123AD505A001D11CE /* athing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = athing.cpp; sourceTree = "<group>"; };
-		4CCDF10223AD505A001D11CE /* aimagedata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aimagedata.h; sourceTree = "<group>"; };
-		4CCDF10323AD505A001D11CE /* autilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autilities.h; sourceTree = "<group>"; };
-		4CCDF10423AD505A001D11CE /* acolormap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acolormap.h; sourceTree = "<group>"; };
-		4CCDF10523AD505A001D11CE /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
-		4CCDF10623AD505A001D11CE /* alump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alump.h; sourceTree = "<group>"; };
-		4CCDF10723AD505A001D11CE /* athing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = athing.h; sourceTree = "<group>"; };
-		4CCDF10823AD505A001D11CE /* acolormap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acolormap.cpp; sourceTree = "<group>"; };
-		4CCDF10923AD505A001D11CE /* aendoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aendoom.cpp; sourceTree = "<group>"; };
-		4CCDF10A23AD505A001D11CE /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atexture.h; sourceTree = "<group>"; };
-		4CCDF10B23AD505A001D11CE /* atgaexporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atgaexporter.h; sourceTree = "<group>"; };
-		4CCDF10C23AD505A001D11CE /* ademo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ademo.cpp; sourceTree = "<group>"; };
-		4CCDF10D23AD505A001D11CE /* apicture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = apicture.cpp; sourceTree = "<group>"; };
-		4CCDF10E23AD505A001D11CE /* ageometryreadservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ageometryreadservice.h; sourceTree = "<group>"; };
-		4CCDF10F23AD505A001D11CE /* alevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alevel.h; sourceTree = "<group>"; };
-		4CCDF11023AD505A001D11CE /* alevelintegrity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alevelintegrity.h; sourceTree = "<group>"; };
-		4CCDF11123AD505A001D11CE /* asprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asprite.h; sourceTree = "<group>"; };
-		4CCDF11223AD505A001D11CE /* apalete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = apalete.cpp; sourceTree = "<group>"; };
-		4CCDF11323AD505A001D11CE /* alump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alump.cpp; sourceTree = "<group>"; };
-		4CCDF11423AD505A001D11CE /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
-		4CCDF11523AD505A001D11CE /* autilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = autilities.cpp; sourceTree = "<group>"; };
-		4CCDF11623AD505A001D11CE /* apalete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apalete.h; sourceTree = "<group>"; };
-		4CCDF11723AD505A001D11CE /* apicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apicture.h; sourceTree = "<group>"; };
-		4CCDF11823AD505A001D11CE /* awad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = awad.h; sourceTree = "<group>"; };
-		4CCDF11923AD505A001D11CE /* aimagedata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aimagedata.cpp; sourceTree = "<group>"; };
-		4CCDF11A23AD505A001D11CE /* ageometryreadservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ageometryreadservice.cpp; sourceTree = "<group>"; };
-		4CCDF11B23AD505A001D11CE /* aendoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aendoom.h; sourceTree = "<group>"; };
-		4CCDF11D23AD505A001D11CE /* asprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = asprite.cpp; sourceTree = "<group>"; };
-		4CCDF11E23AD505A001D11CE /* alevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alevel.cpp; sourceTree = "<group>"; };
-		4CCDF11F23AD505A001D11CE /* atgaexporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = atgaexporter.cpp; sourceTree = "<group>"; };
-		4CCDF12023AD505A001D11CE /* ademo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ademo.h; sourceTree = "<group>"; };
 		4CCDF12123AD505A001D11CE /* doom.wad */ = {isa = PBXFileReference; lastKnownFileType = file; path = doom.wad; sourceTree = "<group>"; };
 		4CCDF12223AD505A001D11CE /* doom1.wad */ = {isa = PBXFileReference; lastKnownFileType = file; path = doom1.wad; sourceTree = "<group>"; };
 		4CCDF13723AD530F001D11CE /* LumpsListDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumpsListDataSource.h; sourceTree = "<group>"; };
@@ -94,6 +56,44 @@
 		4CCDF13E23AD537C001D11CE /* LumpModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LumpModel.m; sourceTree = "<group>"; };
 		4CCDF14023AD6111001D11CE /* UIEventsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIEventsHandler.h; sourceTree = "<group>"; };
 		4CCDF14123AD6112001D11CE /* UIEventsHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIEventsHandler.m; sourceTree = "<group>"; };
+		4CE65E1C24094245004F2370 /* apicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apicture.h; path = wad/apicture.h; sourceTree = "<group>"; };
+		4CE65E1D24094245004F2370 /* ademo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ademo.cpp; path = wad/ademo.cpp; sourceTree = "<group>"; };
+		4CE65E1E24094245004F2370 /* aflat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aflat.cpp; path = wad/aflat.cpp; sourceTree = "<group>"; };
+		4CE65E1F24094245004F2370 /* aflat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aflat.h; path = wad/aflat.h; sourceTree = "<group>"; };
+		4CE65E2024094246004F2370 /* acolormap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acolormap.cpp; path = wad/acolormap.cpp; sourceTree = "<group>"; };
+		4CE65E2124094246004F2370 /* apalete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apalete.h; path = wad/apalete.h; sourceTree = "<group>"; };
+		4CE65E2224094246004F2370 /* acolormap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acolormap.h; path = wad/acolormap.h; sourceTree = "<group>"; };
+		4CE65E2324094246004F2370 /* aendoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aendoom.h; path = wad/aendoom.h; sourceTree = "<group>"; };
+		4CE65E2424094246004F2370 /* aendoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aendoom.cpp; path = wad/aendoom.cpp; sourceTree = "<group>"; };
+		4CE65E2524094246004F2370 /* apicture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apicture.cpp; path = wad/apicture.cpp; sourceTree = "<group>"; };
+		4CE65E2624094246004F2370 /* ademo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ademo.h; path = wad/ademo.h; sourceTree = "<group>"; };
+		4CE65E2724094246004F2370 /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexture.cpp; path = wad/atexture.cpp; sourceTree = "<group>"; };
+		4CE65E2824094246004F2370 /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexture.h; path = wad/atexture.h; sourceTree = "<group>"; };
+		4CE65E2924094246004F2370 /* apalete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apalete.cpp; path = wad/apalete.cpp; sourceTree = "<group>"; };
+		4CE65E312409425F004F2370 /* alumptools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alumptools.cpp; path = wad/alumptools.cpp; sourceTree = "<group>"; };
+		4CE65E322409425F004F2370 /* alumptools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alumptools.h; path = wad/alumptools.h; sourceTree = "<group>"; };
+		4CE65E332409425F004F2370 /* atgaexporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atgaexporter.h; path = wad/atgaexporter.h; sourceTree = "<group>"; };
+		4CE65E342409425F004F2370 /* ageometryreadservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ageometryreadservice.h; path = wad/ageometryreadservice.h; sourceTree = "<group>"; };
+		4CE65E352409425F004F2370 /* autilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = autilities.h; path = wad/autilities.h; sourceTree = "<group>"; };
+		4CE65E362409425F004F2370 /* ageometryreadservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ageometryreadservice.cpp; path = wad/ageometryreadservice.cpp; sourceTree = "<group>"; };
+		4CE65E372409425F004F2370 /* autilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = autilities.cpp; path = wad/autilities.cpp; sourceTree = "<group>"; };
+		4CE65E382409425F004F2370 /* atgaexporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atgaexporter.cpp; path = wad/atgaexporter.cpp; sourceTree = "<group>"; };
+		4CE65E3D24094270004F2370 /* awad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = awad.cpp; path = wad/awad.cpp; sourceTree = "<group>"; };
+		4CE65E3E24094270004F2370 /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = enums.h; path = wad/enums.h; sourceTree = "<group>"; };
+		4CE65E3F24094270004F2370 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = wad/types.h; sourceTree = "<group>"; };
+		4CE65E4024094270004F2370 /* awad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = awad.h; path = wad/awad.h; sourceTree = "<group>"; };
+		4CE65E4224094294004F2370 /* aimagedata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aimagedata.h; path = wad/aimagedata.h; sourceTree = "<group>"; };
+		4CE65E4324094294004F2370 /* asprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asprite.cpp; path = wad/asprite.cpp; sourceTree = "<group>"; };
+		4CE65E4424094294004F2370 /* alump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alump.cpp; path = wad/alump.cpp; sourceTree = "<group>"; };
+		4CE65E4524094294004F2370 /* asprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asprite.h; path = wad/asprite.h; sourceTree = "<group>"; };
+		4CE65E4624094294004F2370 /* athing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = athing.h; path = wad/athing.h; sourceTree = "<group>"; };
+		4CE65E4724094294004F2370 /* alevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alevel.cpp; path = wad/alevel.cpp; sourceTree = "<group>"; };
+		4CE65E4824094294004F2370 /* alevelintegrity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alevelintegrity.cpp; path = wad/alevelintegrity.cpp; sourceTree = "<group>"; };
+		4CE65E4924094294004F2370 /* aimagedata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimagedata.cpp; path = wad/aimagedata.cpp; sourceTree = "<group>"; };
+		4CE65E4A24094294004F2370 /* alevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alevel.h; path = wad/alevel.h; sourceTree = "<group>"; };
+		4CE65E4B24094294004F2370 /* alevelintegrity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alevelintegrity.h; path = wad/alevelintegrity.h; sourceTree = "<group>"; };
+		4CE65E4C24094294004F2370 /* alump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alump.h; path = wad/alump.h; sourceTree = "<group>"; };
+		4CE65E4D24094294004F2370 /* athing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = athing.cpp; path = wad/athing.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,46 +151,70 @@
 		4CCDF0FB23AD505A001D11CE /* wad */ = {
 			isa = PBXGroup;
 			children = (
-				4CCDF10323AD505A001D11CE /* autilities.h */,
-				4CCDF11523AD505A001D11CE /* autilities.cpp */,
-				4C65A02823BE9FFA00E15DF6 /* alumptools.h */,
-				4C65A02723BE9FFA00E15DF6 /* alumptools.cpp */,
-				4CCDF11823AD505A001D11CE /* awad.h */,
-				4CCDF10023AD505A001D11CE /* awad.cpp */,
-				4CCDF0FC23AD505A001D11CE /* alevelintegrity.cpp */,
-				4CCDF0FD23AD505A001D11CE /* aflat.h */,
-				4CCDF0FF23AD505A001D11CE /* aflat.cpp */,
-				4CCDF10123AD505A001D11CE /* athing.cpp */,
-				4CCDF10223AD505A001D11CE /* aimagedata.h */,
-				4CCDF10423AD505A001D11CE /* acolormap.h */,
-				4CCDF10523AD505A001D11CE /* types.h */,
-				4CCDF10623AD505A001D11CE /* alump.h */,
-				4CCDF10723AD505A001D11CE /* athing.h */,
-				4CCDF10823AD505A001D11CE /* acolormap.cpp */,
-				4CCDF10923AD505A001D11CE /* aendoom.cpp */,
-				4CCDF10A23AD505A001D11CE /* atexture.h */,
-				4CCDF0FE23AD505A001D11CE /* atexture.cpp */,
-				4CCDF10B23AD505A001D11CE /* atgaexporter.h */,
-				4CCDF10C23AD505A001D11CE /* ademo.cpp */,
-				4CCDF10D23AD505A001D11CE /* apicture.cpp */,
-				4CCDF10E23AD505A001D11CE /* ageometryreadservice.h */,
-				4CCDF10F23AD505A001D11CE /* alevel.h */,
-				4CCDF11023AD505A001D11CE /* alevelintegrity.h */,
-				4CCDF11123AD505A001D11CE /* asprite.h */,
-				4CCDF11223AD505A001D11CE /* apalete.cpp */,
-				4CCDF11323AD505A001D11CE /* alump.cpp */,
-				4CCDF11423AD505A001D11CE /* enums.h */,
-				4CCDF11623AD505A001D11CE /* apalete.h */,
-				4CCDF11723AD505A001D11CE /* apicture.h */,
-				4CCDF11923AD505A001D11CE /* aimagedata.cpp */,
-				4CCDF11A23AD505A001D11CE /* ageometryreadservice.cpp */,
-				4CCDF11B23AD505A001D11CE /* aendoom.h */,
-				4CCDF11D23AD505A001D11CE /* asprite.cpp */,
-				4CCDF11E23AD505A001D11CE /* alevel.cpp */,
-				4CCDF11F23AD505A001D11CE /* atgaexporter.cpp */,
-				4CCDF12023AD505A001D11CE /* ademo.h */,
+				4CE65E4424094294004F2370 /* alump.cpp */,
+				4CE65E4C24094294004F2370 /* alump.h */,
+				4CE65E4324094294004F2370 /* asprite.cpp */,
+				4CE65E4524094294004F2370 /* asprite.h */,
+				4CE65E3D24094270004F2370 /* awad.cpp */,
+				4CE65E4024094270004F2370 /* awad.h */,
+				4CE65E3E24094270004F2370 /* enums.h */,
+				4CE65E3F24094270004F2370 /* types.h */,
+				4CE65E1B24094205004F2370 /* level */,
+				4CE65E1A24094200004F2370 /* services */,
+				4CE65E19240941FA004F2370 /* lumps */,
 			);
-			path = wad;
+			name = wad;
+			sourceTree = "<group>";
+		};
+		4CE65E19240941FA004F2370 /* lumps */ = {
+			isa = PBXGroup;
+			children = (
+				4CE65E2024094246004F2370 /* acolormap.cpp */,
+				4CE65E2224094246004F2370 /* acolormap.h */,
+				4CE65E1D24094245004F2370 /* ademo.cpp */,
+				4CE65E2624094246004F2370 /* ademo.h */,
+				4CE65E2424094246004F2370 /* aendoom.cpp */,
+				4CE65E2324094246004F2370 /* aendoom.h */,
+				4CE65E1E24094245004F2370 /* aflat.cpp */,
+				4CE65E1F24094245004F2370 /* aflat.h */,
+				4CE65E2924094246004F2370 /* apalete.cpp */,
+				4CE65E2124094246004F2370 /* apalete.h */,
+				4CE65E2524094246004F2370 /* apicture.cpp */,
+				4CE65E1C24094245004F2370 /* apicture.h */,
+				4CE65E2724094246004F2370 /* atexture.cpp */,
+				4CE65E2824094246004F2370 /* atexture.h */,
+			);
+			name = lumps;
+			sourceTree = "<group>";
+		};
+		4CE65E1A24094200004F2370 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				4CE65E4924094294004F2370 /* aimagedata.cpp */,
+				4CE65E4224094294004F2370 /* aimagedata.h */,
+				4CE65E362409425F004F2370 /* ageometryreadservice.cpp */,
+				4CE65E342409425F004F2370 /* ageometryreadservice.h */,
+				4CE65E312409425F004F2370 /* alumptools.cpp */,
+				4CE65E322409425F004F2370 /* alumptools.h */,
+				4CE65E382409425F004F2370 /* atgaexporter.cpp */,
+				4CE65E332409425F004F2370 /* atgaexporter.h */,
+				4CE65E372409425F004F2370 /* autilities.cpp */,
+				4CE65E352409425F004F2370 /* autilities.h */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		4CE65E1B24094205004F2370 /* level */ = {
+			isa = PBXGroup;
+			children = (
+				4CE65E4D24094294004F2370 /* athing.cpp */,
+				4CE65E4624094294004F2370 /* athing.h */,
+				4CE65E4724094294004F2370 /* alevel.cpp */,
+				4CE65E4A24094294004F2370 /* alevel.h */,
+				4CE65E4824094294004F2370 /* alevelintegrity.cpp */,
+				4CE65E4B24094294004F2370 /* alevelintegrity.h */,
+			);
+			name = level;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,29 +289,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCDF0F423AD4FEE001D11CE /* main.m in Sources */,
-				4CCDF12F23AD505A001D11CE /* aimagedata.cpp in Sources */,
+				4CE65E4F24094294004F2370 /* alump.cpp in Sources */,
 				4CCDF0EC23AD4FED001D11CE /* AppDelegate.mm in Sources */,
-				4CCDF13023AD505A001D11CE /* ageometryreadservice.cpp in Sources */,
-				4CCDF13223AD505A001D11CE /* asprite.cpp in Sources */,
-				4CCDF12623AD505A001D11CE /* awad.cpp in Sources */,
-				4CCDF12323AD505A001D11CE /* alevelintegrity.cpp in Sources */,
-				4CCDF13423AD505A001D11CE /* atgaexporter.cpp in Sources */,
-				4CCDF12D23AD505A001D11CE /* alump.cpp in Sources */,
-				4CCDF12823AD505A001D11CE /* acolormap.cpp in Sources */,
+				4CE65E4124094270004F2370 /* awad.cpp in Sources */,
+				4CE65E4E24094294004F2370 /* asprite.cpp in Sources */,
+				4CE65E3024094246004F2370 /* apalete.cpp in Sources */,
+				4CE65E2B24094246004F2370 /* aflat.cpp in Sources */,
+				4CE65E2D24094246004F2370 /* aendoom.cpp in Sources */,
 				4CCDF13C23AD532A001D11CE /* LumpsService.mm in Sources */,
+				4CE65E2A24094246004F2370 /* ademo.cpp in Sources */,
+				4CE65E3C2409425F004F2370 /* atgaexporter.cpp in Sources */,
+				4CE65E392409425F004F2370 /* alumptools.cpp in Sources */,
+				4CE65E2E24094246004F2370 /* apicture.cpp in Sources */,
+				4CE65E2F24094246004F2370 /* atexture.cpp in Sources */,
+				4CE65E5324094294004F2370 /* athing.cpp in Sources */,
+				4CE65E5224094294004F2370 /* aimagedata.cpp in Sources */,
+				4CE65E5124094294004F2370 /* alevelintegrity.cpp in Sources */,
 				4CCDF13F23AD537C001D11CE /* LumpModel.m in Sources */,
-				4CCDF12723AD505A001D11CE /* athing.cpp in Sources */,
-				4CCDF12B23AD505A001D11CE /* apicture.cpp in Sources */,
-				4CCDF12523AD505A001D11CE /* aflat.cpp in Sources */,
-				4CCDF12C23AD505A001D11CE /* apalete.cpp in Sources */,
-				4CCDF12E23AD505A001D11CE /* autilities.cpp in Sources */,
 				4CCDF14223AD6112001D11CE /* UIEventsHandler.m in Sources */,
-				4CCDF12423AD505A001D11CE /* atexture.cpp in Sources */,
-				4CCDF12A23AD505A001D11CE /* ademo.cpp in Sources */,
-				4CCDF13323AD505A001D11CE /* alevel.cpp in Sources */,
+				4CE65E3B2409425F004F2370 /* autilities.cpp in Sources */,
+				4CE65E3A2409425F004F2370 /* ageometryreadservice.cpp in Sources */,
+				4CE65E5024094294004F2370 /* alevel.cpp in Sources */,
+				4CE65E2C24094246004F2370 /* acolormap.cpp in Sources */,
 				4CCDF13923AD530F001D11CE /* LumpsListDataSource.m in Sources */,
-				4CCDF12923AD505A001D11CE /* aendoom.cpp in Sources */,
-				4C65A02923BE9FFA00E15DF6 /* alumptools.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

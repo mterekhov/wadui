@@ -28,11 +28,11 @@ public:
     static bool stringCompare(const std::string& one, const std::string& two);
 
     /**
-     Checks if prefix string is the begining of string
+        Checks if substring is in the string
 
-     @param prefix prefix which should be the start of string
      @param string the string in which we are trying to find prefix
-     @return result of comparison, true if prefix is the prefix of string and false in other cases
+     @param substring string which should be as part of first parameter
+     @return result of comparison, true if substring is in the string
      */
     static bool stringContainsSubstring(const std::string& string, const std::string& substring);
 };
