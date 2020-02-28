@@ -347,13 +347,7 @@ bool AWAD::readPatches(FILE* wadFile)
 		{
 			continue;
 		}
-		lumpData = new unsigned char [patchLump.lumpSize];
-		ALumpTools::readLumpData(wadFile, patchLump, lumpData);
-
-		APicture newPatch(lumpData, patchLumpName, _palete);
-		_patchesList.push_back(newPatch);
-
-		delete [] lumpData;
+		_patchesList.push_back(APicture(wadFile, patchLump, _palete));
 	}
 
     return true;

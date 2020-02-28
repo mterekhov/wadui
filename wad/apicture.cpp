@@ -2,6 +2,7 @@
 #include "apalete.h"
 #include "atgaexporter.h"
 #include "types.h"
+#import "alumptools.h"
 
 //=============================================================================
 
@@ -17,21 +18,24 @@ APicture::APicture() : _patchName("")
 
 //=============================================================================
 
-APicture::APicture(const unsigned char* incomingData, const std::string& incomingName, const APalete& palete) : _patchName(incomingName)
+APicture::APicture(FILE* wadFile, const ALump& lump, const APalete& palete) : _patchName(lump.lumpName)
 {
-	if (incomingData)
-	{
-		int bytesOffset = 0;
-        short width = 0;
-		memcpy(&width, &incomingData[bytesOffset], 2);
-		bytesOffset += 2;
-        short height = 0;
-		memcpy(&height, &incomingData[bytesOffset], 2);
-		bytesOffset += 2;
+    if (lump.lumpSize)
+    {
+        unsigned char *pictureData = new unsigned char [lump.lumpSize];
+        ALumpTools::readLumpData(wadFile, lump, pictureData);
 
-		bytesOffset += 4;	//	skiping offsets
+        int bytesOffset = 0;
+        short width = 0;
+        memcpy(&width, &pictureData[bytesOffset], 2);
+        bytesOffset += 2;
+        short height = 0;
+        memcpy(&height, &pictureData[bytesOffset], 2);
+        bytesOffset += 2;
+        
+        bytesOffset += 4;    //    skiping offsets
         imageData = AImageData(width, height);
-		convertData(incomingData, palete, bytesOffset);
+        convertData(pictureData, palete, bytesOffset);
     }
 }
 
@@ -82,7 +86,7 @@ void APicture::convertData(const unsigned char* incomingData, const APalete& pal
 {
 	int bytesOffsetPointer = bytesOffset;
 
-    int* columnOffsets = new int[imageData.width()];
+    int *columnOffsets = new int[imageData.width()];
     memset(columnOffsets, 0, 4 * imageData.width());
     for (int i = 0; i < imageData.width(); i++)
     {

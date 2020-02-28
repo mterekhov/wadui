@@ -162,7 +162,7 @@ ASprite ALevel::readThingSpritesList(FILE* wadFile, const AThing& thing, const T
         unsigned char *spriteData = new unsigned char [spriteLump.lumpSize];
         ALumpTools::readLumpData(wadFile, spriteLump, spriteData);
 
-        APicture newSpritePicture(spriteData, spriteLump.lumpName, palete);
+        APicture newSpritePicture(wadFile, spriteLump, palete);
         newSprite.picturesList[spriteLump.lumpName] = newSpritePicture;
         std::string path = "/Users/michael/Pictures/level/";
         path += spriteLump.lumpName;
