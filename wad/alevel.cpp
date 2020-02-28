@@ -2,6 +2,7 @@
 #include "autilities.h"
 #include "asprite.h"
 #include "alevelintegrity.h"
+#include "alumptools.h"
 
 //=============================================================================
 
@@ -102,7 +103,7 @@ bool ALevel::readLevelData(FILE* wadFile, const TLumpsListConstIter& levelLumpIt
 TThingList ALevel::readThings(FILE *wadFile, const ALump& lump, const TLumpsList& tableOfContents, const APalete& palete)
 {
     unsigned char *thingsData = new unsigned char[lump.lumpSize];
-    AUtilities::readLumpData(wadFile, lump, thingsData);
+    ALumpTools::readLumpData(wadFile, lump, thingsData);
     
     int byteOffset = 0;
     TThingList thingsList;
@@ -131,7 +132,7 @@ TThingList ALevel::readThings(FILE *wadFile, const ALump& lump, const TLumpsList
 void ALevel::readLineDefs(FILE *wadFile, const ALump& lump, const TLumpsList& tableOfContents, const APalete& palete)
 {
     unsigned char *linedefsData = new unsigned char[lump.lumpSize];
-    AUtilities::readLumpData(wadFile, lump, linedefsData);
+    ALumpTools::readLumpData(wadFile, lump, linedefsData);
 
     int byteOffset = 0;
     while (byteOffset < lump.lumpSize)
@@ -148,18 +149,18 @@ void ALevel::readLineDefs(FILE *wadFile, const ALump& lump, const TLumpsList& ta
 ASprite ALevel::readThingSpritesList(FILE* wadFile, const AThing& thing, const TLumpsList& tableOfContents, const APalete& palete)
 {
     std::string spriteLumpsPrefix = thing.spritePrefix();
-	TLumpsList spriteslumpList = AUtilities::findLumpsList(spriteLumpsPrefix, tableOfContents);
+	TLumpsList spriteslumpList = ALumpTools::findLumpsList(spriteLumpsPrefix, tableOfContents);
 	ASprite newSprite(spriteLumpsPrefix);
 	for (TLumpsListIter iter = spriteslumpList.begin(); iter != spriteslumpList.end(); iter++)
 	{
-		TLumpsListConstIter spriteLumpIter = AUtilities::findLumpIter(iter->lumpName, tableOfContents);
+		TLumpsListConstIter spriteLumpIter = ALumpTools::findLumpIter(iter->lumpName, tableOfContents);
 		if (spriteLumpIter == tableOfContents.end())
 		{
 			continue;
 		}
         const ALump& spriteLump = *spriteLumpIter;
         unsigned char *spriteData = new unsigned char [spriteLump.lumpSize];
-        AUtilities::readLumpData(wadFile, spriteLump, spriteData);
+        ALumpTools::readLumpData(wadFile, spriteLump, spriteData);
 
         APicture newSpritePicture(spriteData, spriteLump.lumpName, palete);
         newSprite.picturesList[spriteLump.lumpName] = newSpritePicture;

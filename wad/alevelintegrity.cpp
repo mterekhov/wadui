@@ -1,27 +1,12 @@
 #include "alevelintegrity.h"
 #include "autilities.h"
+#include "alumptools.h"
 
 //=============================================================================
 
 namespace spcWAD
 {
     
-//=============================================================================
-
-std::vector<std::string> LevelIntegrityLumps =
-{
-    "THINGS",
-    "LINEDEFS",
-    "SIDEDEFS",
-    "VERTEXES",
-    "SSECTORS",
-    "NODES",
-    "SECTORS",
-    "REJECT",
-    "BLOCKMAP",
-    "SEGS",
-};
-
 //=============================================================================
 
 ALevelIntegrity::ALevelIntegrity()
@@ -48,6 +33,7 @@ bool ALevelIntegrity::checkIntegrity(const int integrityToCheck)
 int ALevelIntegrity::calculateCompleteIntegrity()
 {
     int shifter = 1;
+    std::vector<std::string> LevelIntegrityLumps = ALumpTools::mapLumpsNames();
     std::vector<std::string>::iterator integrityItem = LevelIntegrityLumps.begin();
     integrityItem++;
     for (;integrityItem != LevelIntegrityLumps.end(); integrityItem++)
@@ -63,6 +49,7 @@ int ALevelIntegrity::calculateCompleteIntegrity()
 int ALevelIntegrity::integrityEnum(const std::string& integrityString)
 {
     int shifter = 1;
+    std::vector<std::string> LevelIntegrityLumps = ALumpTools::mapLumpsNames();
     for (std::vector<std::string>::iterator integrityItem = LevelIntegrityLumps.begin(); integrityItem != LevelIntegrityLumps.end(); integrityItem++)
     {
         if (AUtilities::stringCompare(integrityString, *integrityItem))
