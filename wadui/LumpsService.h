@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LumpsServiceProtocol <NSObject>
 
+- (NSArray<LumpModel *> *)lumpsListWithFilterString:(NSString *)filterString;
 - (NSArray<LumpModel *> *)lumpsList;
 - (NSArray<LumpModel *> *)lumpsListWithoutMaps;
 - (NSArray<LumpModel *> *)lumpsListWithMarkersOnly;

@@ -10,6 +10,7 @@
 #import "LumpModel.h"
 #include "awad.h"
 #include "alumptools.h"
+#include "autilities.h"
 
 @interface LumpsService ()
 
@@ -43,13 +44,26 @@
     return [lumpsList copy];
 }
 
+- (NSArray<LumpModel *> *)lumpsListWithFilterString:(NSString *)filterString {
+    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+    if (!self.wadTools) {
+        return [lumpsList copy];
+    }
+    
+    return [self lumpsListWithNameFilter:[self createCPPFilterWithObjcFilter:@[filterString]]
+                           includeFilter:YES
+                         containsCompare:YES];
+}
+
 - (NSArray<LumpModel *> *)lumpsListWithoutMaps {
     NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
     if (!self.wadTools) {
         return [lumpsList copy];
     }
     
-    return [self lumpsListWithNameFilter:spcWAD::ALumpTools::doom1MapLumpsNames()];
+    return [self lumpsListWithNameFilter:spcWAD::ALumpTools::doom1MapLumpsNames()
+                           includeFilter:NO
+                         containsCompare:NO];
 }
 
 - (NSArray<LumpModel *> *)lumpsListWithMarkersOnly {
@@ -93,26 +107,71 @@
     return newModel;
 }
 
-- (NSArray<LumpModel *> *)lumpsListWithNameFilter:(std::list<std::string>) filtersList{
+/**
+ Filters lumps list
+ @param filtersList list of strings which should filter lumps names
+ @param includeFilter if YES then every lump with name that matches filter list will be included in result, otherwise will be excluded
+ @param containsCompare if YES then filters everything that strictly matches filter array
+ @return filtered list of lumps
+ */
+- (NSArray<LumpModel *> *)lumpsListWithNameFilter:(std::vector<std::string>) filtersList
+                                    includeFilter:(BOOL)includeFilter
+                                  containsCompare:(BOOL)containsCompare {
     NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
     if (!self.wadTools) {
         return [lumpsList copy];
     }
     
     spcWAD::TLumpsList lowLevelLumpsList = self.wadTools->lumpsList();
+    
     for (spcWAD::TLumpsListConstIter iter = lowLevelLumpsList.begin(); iter != lowLevelLumpsList.end(); iter++) {
-        if (std::find(filtersList.begin(), filtersList.end(), iter->lumpName) != filtersList.end()) {
-            continue;
+        for (std::vector<std::string>::iterator filterIter = filtersList.begin(); filterIter != filtersList.end(); ++filterIter) {
+            BOOL filterResult = [self filterCheckWithFilter:*filterIter
+                                                   lumpName:iter->lumpName
+                                            containsCompare:containsCompare];
+            if (!filterResult) {
+                continue;
+            }
+                
+            if (includeFilter) {
+                [lumpsList addObject:[self createLumpModelWithIter:iter]];
+                break;
+            }
+            
+            if (filterResult && !includeFilter) {
+                NSLog(@"%s", iter->lumpName.c_str());
+                break;
+            }
+
+            if (filterResult) {
+            [lumpsList addObject:[self createLumpModelWithIter:iter]];
+            break;
+            }
         }
-        
-        [lumpsList addObject:[self createLumpModelWithIter:iter]];
     }
     
     return [lumpsList copy];
 }
 
-- (std::list<std::string>)createCPPFilterWithObjcFilter:(NSArray<NSString *> *)objcFilter {
-    std::list<std::string> mapLumps;
+- (BOOL)filterCheckWithFilter:(const std::string &)filter
+                     lumpName:(const std::string &)lumpName
+              containsCompare:(BOOL)containsCompare {
+    if (containsCompare) {
+        if (spcWAD::AUtilities::stringContainsSubstring(lumpName, filter)) {
+            return true;
+        }
+    }
+    else {
+        if (spcWAD::AUtilities::stringCompare(lumpName, filter)) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+- (std::vector<std::string>)createCPPFilterWithObjcFilter:(NSArray<NSString *> *)objcFilter {
+    std::vector<std::string> mapLumps;
     if (objcFilter.count == 0) {
         return mapLumps;
     }

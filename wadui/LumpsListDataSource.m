@@ -31,6 +31,11 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
 
 #pragma mark - MainMenuHandlerDelegate -
 
+- (void)searchWithText:(NSString *)text {
+    [self.lumpsService lumpsListWithFilterString:text];
+    [self.lumpsListTableView reloadData];
+}
+
 - (void)showAll {
     [self refreshLumpsList];
     [self.lumpsListTableView reloadData];
