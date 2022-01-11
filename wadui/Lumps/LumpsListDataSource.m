@@ -9,6 +9,9 @@
 #import "LumpsListDataSource.h"
 #import "LumpsService.h"
 #import "LumpModel.h"
+
+#import "LodService.h"
+#import "LodModel.h"
 #import "UIEventsHandler.h"
 #import "AppDelegate.h"
 
@@ -90,12 +93,22 @@ static const NSString *LumpsListAboutCellID = @"LumpsListAboutCellID";
         return;
     }
     
-    NSString *wadFilePath = urls.firstObject.path;
-    self.lumpsService = [[LumpsService alloc] initWithWadFileName:wadFilePath];
-    [self refreshLumpsList];
-    [self.lumpsListTableView reloadData];
-    AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
-    appDelegate.window.title = [NSString stringWithFormat:@"%@ - %li lump", urls.firstObject.lastPathComponent, self.lumpsList.count];
+    if ([urls.firstObject.pathExtension.lowercaseString isEqualToString:@"lod"]) {
+        self.lodsService = [[LodService alloc] initWithLodFileName: urls.firstObject.path];
+        [self.lodsService lodItemsList];
+        [self refreshLumpsList];
+        [self.lumpsListTableView reloadData];
+        AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+        appDelegate.window.title = [NSString stringWithFormat:@"%@ - %li LOD items", urls.firstObject.lastPathComponent, self.lumpsList.count];
+    }
+    
+    if ([urls.firstObject.pathExtension.lowercaseString isEqualToString:@"wad"]) {
+        self.lumpsService = [[LumpsService alloc] initWithWadFileName:urls.firstObject.path];
+        [self refreshLumpsList];
+        [self.lumpsListTableView reloadData];
+        AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
+        appDelegate.window.title = [NSString stringWithFormat:@"%@ - %li lump", urls.firstObject.lastPathComponent, self.lumpsList.count];
+    }
 }
 
 #pragma mark - NSTableViewDataSource -

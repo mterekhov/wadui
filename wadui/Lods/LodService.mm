@@ -28,9 +28,11 @@
     return self;
 }
 
-#pragma mark - LumpsServiceProtocol -
+#pragma mark - LodServiceProtocol -
 
 - (NSArray<LodModel *> *)lodItemsList {
+    std::list<spcWAD::ALodItem> lodItemsList = self.lodTools->extractItems(self.fileName.UTF8String);
+    self.lodTools->readSprite(self.fileName.UTF8String, *lodItemsList.begin());
     return [NSArray new];
 }
 
