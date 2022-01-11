@@ -1,0 +1,4 @@
+BITMAPS.LOD filter=lfs diff=lfs merge=lfs -text
+Games.lod filter=lfs diff=lfs merge=lfs -text
+icons.lod filter=lfs diff=lfs merge=lfs -text
+SPRITES.LOD filter=lfs diff=lfs merge=lfs -text
