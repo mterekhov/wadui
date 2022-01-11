@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06E0836B278E44B10010B4BD /* aloditem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06E08367278E44B10010B4BD /* aloditem.cpp */; };
+		06E0836C278E44B10010B4BD /* alod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06E08369278E44B10010B4BD /* alod.cpp */; };
+		06E08371278E44C20010B4BD /* SPRITES.LOD in Resources */ = {isa = PBXBuildFile; fileRef = 06E0836D278E44C20010B4BD /* SPRITES.LOD */; };
+		06E08372278E44C20010B4BD /* icons.lod in Resources */ = {isa = PBXBuildFile; fileRef = 06E0836E278E44C20010B4BD /* icons.lod */; };
+		06E08373278E44C20010B4BD /* BITMAPS.LOD in Resources */ = {isa = PBXBuildFile; fileRef = 06E0836F278E44C20010B4BD /* BITMAPS.LOD */; };
+		06E08374278E44C20010B4BD /* Games.lod in Resources */ = {isa = PBXBuildFile; fileRef = 06E08370278E44C20010B4BD /* Games.lod */; };
+		06E08377278E46440010B4BD /* LodService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 06E08376278E46440010B4BD /* LodService.mm */; };
+		06E0837C278E48890010B4BD /* LodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E0837B278E48890010B4BD /* LodModel.m */; };
 		4CCDF0EC23AD4FED001D11CE /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */; };
 		4CCDF0EE23AD4FEE001D11CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0ED23AD4FEE001D11CE /* Assets.xcassets */; };
 		4CCDF0F123AD4FEE001D11CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCDF0EF23AD4FEE001D11CE /* MainMenu.xib */; };
@@ -38,6 +46,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06E08367278E44B10010B4BD /* aloditem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aloditem.cpp; sourceTree = "<group>"; };
+		06E08368278E44B10010B4BD /* alod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alod.h; sourceTree = "<group>"; };
+		06E08369278E44B10010B4BD /* alod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alod.cpp; sourceTree = "<group>"; };
+		06E0836A278E44B10010B4BD /* aloditem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aloditem.h; sourceTree = "<group>"; };
+		06E0836D278E44C20010B4BD /* SPRITES.LOD */ = {isa = PBXFileReference; lastKnownFileType = file; path = SPRITES.LOD; sourceTree = "<group>"; };
+		06E0836E278E44C20010B4BD /* icons.lod */ = {isa = PBXFileReference; lastKnownFileType = file; path = icons.lod; sourceTree = "<group>"; };
+		06E0836F278E44C20010B4BD /* BITMAPS.LOD */ = {isa = PBXFileReference; lastKnownFileType = file; path = BITMAPS.LOD; sourceTree = "<group>"; };
+		06E08370278E44C20010B4BD /* Games.lod */ = {isa = PBXFileReference; lastKnownFileType = file; path = Games.lod; sourceTree = "<group>"; };
+		06E08375278E46440010B4BD /* LodService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LodService.h; sourceTree = "<group>"; };
+		06E08376278E46440010B4BD /* LodService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LodService.mm; sourceTree = "<group>"; };
+		06E0837A278E48890010B4BD /* LodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LodModel.h; sourceTree = "<group>"; };
+		06E0837B278E48890010B4BD /* LodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LodModel.m; sourceTree = "<group>"; };
 		4CCDF0E723AD4FED001D11CE /* wadui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wadui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCDF0EA23AD4FED001D11CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -107,13 +127,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06E08366278E44B10010B4BD /* lod */ = {
+			isa = PBXGroup;
+			children = (
+				06E08368278E44B10010B4BD /* alod.h */,
+				06E08369278E44B10010B4BD /* alod.cpp */,
+				06E0836A278E44B10010B4BD /* aloditem.h */,
+				06E08367278E44B10010B4BD /* aloditem.cpp */,
+			);
+			path = lod;
+			sourceTree = "<group>";
+		};
+		06E08378278E48090010B4BD /* Lumps */ = {
+			isa = PBXGroup;
+			children = (
+				4CCDF13D23AD537C001D11CE /* LumpModel.h */,
+				4CCDF13E23AD537C001D11CE /* LumpModel.m */,
+				4CCDF13723AD530F001D11CE /* LumpsListDataSource.h */,
+				4CCDF13823AD530F001D11CE /* LumpsListDataSource.m */,
+				4CCDF13A23AD532A001D11CE /* LumpsService.h */,
+				4CCDF13B23AD532A001D11CE /* LumpsService.mm */,
+			);
+			path = Lumps;
+			sourceTree = "<group>";
+		};
+		06E08379278E48140010B4BD /* Lods */ = {
+			isa = PBXGroup;
+			children = (
+				06E08375278E46440010B4BD /* LodService.h */,
+				06E08376278E46440010B4BD /* LodService.mm */,
+				06E0837A278E48890010B4BD /* LodModel.h */,
+				06E0837B278E48890010B4BD /* LodModel.m */,
+			);
+			path = Lods;
+			sourceTree = "<group>";
+		};
 		4CCDF0DE23AD4FED001D11CE = {
 			isa = PBXGroup;
 			children = (
+				06E08366278E44B10010B4BD /* lod */,
 				4CCDF0FB23AD505A001D11CE /* wad */,
 				4CCDF0E923AD4FED001D11CE /* wadui */,
 				4CCDF12123AD505A001D11CE /* doom.wad */,
 				4CCDF12223AD505A001D11CE /* doom1.wad */,
+				06E0836F278E44C20010B4BD /* BITMAPS.LOD */,
+				06E08370278E44C20010B4BD /* Games.lod */,
+				06E0836E278E44C20010B4BD /* icons.lod */,
+				06E0836D278E44C20010B4BD /* SPRITES.LOD */,
 				4CCDF0E823AD4FED001D11CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +189,8 @@
 		4CCDF0E923AD4FED001D11CE /* wadui */ = {
 			isa = PBXGroup;
 			children = (
+				06E08379278E48140010B4BD /* Lods */,
+				06E08378278E48090010B4BD /* Lumps */,
 				4CCDF0EA23AD4FED001D11CE /* AppDelegate.h */,
 				4CCDF0EB23AD4FED001D11CE /* AppDelegate.mm */,
 				4CCDF14023AD6111001D11CE /* UIEventsHandler.h */,
@@ -138,12 +200,6 @@
 				4CCDF0F223AD4FEE001D11CE /* Info.plist */,
 				4CCDF0F323AD4FEE001D11CE /* main.m */,
 				4CCDF0F523AD4FEE001D11CE /* wadui.entitlements */,
-				4CCDF13723AD530F001D11CE /* LumpsListDataSource.h */,
-				4CCDF13823AD530F001D11CE /* LumpsListDataSource.m */,
-				4CCDF13A23AD532A001D11CE /* LumpsService.h */,
-				4CCDF13B23AD532A001D11CE /* LumpsService.mm */,
-				4CCDF13D23AD537C001D11CE /* LumpModel.h */,
-				4CCDF13E23AD537C001D11CE /* LumpModel.m */,
 			);
 			path = wadui;
 			sourceTree = "<group>";
@@ -276,8 +332,12 @@
 			files = (
 				4CCDF13523AD505A001D11CE /* doom.wad in Resources */,
 				4CCDF0EE23AD4FEE001D11CE /* Assets.xcassets in Resources */,
+				06E08372278E44C20010B4BD /* icons.lod in Resources */,
+				06E08374278E44C20010B4BD /* Games.lod in Resources */,
 				4CCDF0F123AD4FEE001D11CE /* MainMenu.xib in Resources */,
+				06E08373278E44C20010B4BD /* BITMAPS.LOD in Resources */,
 				4CCDF13623AD505A001D11CE /* doom1.wad in Resources */,
+				06E08371278E44C20010B4BD /* SPRITES.LOD in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +353,11 @@
 				4CCDF0EC23AD4FED001D11CE /* AppDelegate.mm in Sources */,
 				4CE65E4124094270004F2370 /* awad.cpp in Sources */,
 				4CE65E4E24094294004F2370 /* asprite.cpp in Sources */,
+				06E0837C278E48890010B4BD /* LodModel.m in Sources */,
+				06E0836C278E44B10010B4BD /* alod.cpp in Sources */,
 				4CE65E3024094246004F2370 /* apalete.cpp in Sources */,
+				06E0836B278E44B10010B4BD /* aloditem.cpp in Sources */,
+				06E08377278E46440010B4BD /* LodService.mm in Sources */,
 				4CE65E2B24094246004F2370 /* aflat.cpp in Sources */,
 				4CE65E2D24094246004F2370 /* aendoom.cpp in Sources */,
 				4CCDF13C23AD532A001D11CE /* LumpsService.mm in Sources */,
