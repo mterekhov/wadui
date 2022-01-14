@@ -6,8 +6,8 @@
 //  Copyright © 2019 Michael. All rights reserved.
 //
 
-#import "LumpModel.h"
+#import "CellModel.h"
 
-@implementation LumpModel
+@implementation CellModel
 
 @end

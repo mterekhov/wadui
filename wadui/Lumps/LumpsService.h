@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ModelsServiceProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,18 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LumpsServiceProtocol <NSObject>
 
-- (NSArray<LumpModel *> *)lumpsListWithFilterString:(NSString *)filterString;
-- (NSArray<LumpModel *> *)lumpsList;
-- (NSArray<LumpModel *> *)lumpsListWithoutMaps;
-- (NSArray<LumpModel *> *)lumpsListWithMarkersOnly;
-- (void)exportLump:(LumpModel *)model folderPath:(NSString *)folderPath;
-- (void)exportLumpAsImage:(LumpModel *)model folderPath:(NSString *)folderPath;
+//- (NSArray<LumpModel *> *)lumpsListWithFilterString:(NSString *)filterString;
+//- (NSArray<LumpModel *> *)lumpsList;
+//- (NSArray<LumpModel *> *)lumpsListWithoutMaps;
+//- (NSArray<LumpModel *> *)lumpsListWithMarkersOnly;
+//- (void)exportLump:(LumpModel *)model folderPath:(NSString *)folderPath;
+//- (void)exportLumpAsImage:(LumpModel *)model folderPath:(NSString *)folderPath;
 
 @end
 
-@interface LumpsService : NSObject<LumpsServiceProtocol>
+@interface LumpsService : NSObject<LumpsServiceProtocol, ModelsServiceProtocol>
 
-- (instancetype)initWithWadFileName:(NSString *)wadFileName;
+- (instancetype)initWithWadFileName: (NSString *)wadFileName;
 
 @end
 

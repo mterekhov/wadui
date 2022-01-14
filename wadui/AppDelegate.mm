@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "UIEventsHandler.h"
+#import "MenuEventsHandler.h"
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet UIEventsHandler *menuHandler;
+@property (weak, nonatomic, nullable) IBOutlet MenuEventsHandler *menuHandler;
 
 @end
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LumpModel : NSObject
+@interface CellModel : NSObject
 
 @property (nonatomic, assign) NSInteger size;
 @property (nonatomic, assign) NSInteger offset;

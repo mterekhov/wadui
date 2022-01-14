@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -672,12 +673,13 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="139" y="154"/>
         </menu>
         <window title="wadui" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -685,19 +687,18 @@
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uty-1e-yeg">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                         <clipView key="contentView" id="VZB-es-z3f">
-                            <rect key="frame" x="1" y="0.0" width="478" height="359"/>
+                            <rect key="frame" x="1" y="1" width="478" height="358"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="HWn-0K-nRR" viewBased="YES" id="0XX-r9-f6N">
-                                    <rect key="frame" x="0.0" y="0.0" width="478" height="334"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="478" height="333"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn width="116" minWidth="40" maxWidth="1000" id="an4-LZ-v7a">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Name">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -708,12 +709,12 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="LumpsListNameCellID" id="b9f-5N-dmg">
-                                                    <rect key="frame" x="1" y="1" width="116" height="17"/>
+                                                <tableCellView identifier="ModelsListNameCellID" id="b9f-5N-dmg">
+                                                    <rect key="frame" x="11" y="1" width="121" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJj-Dj-lDD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="116" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="121" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="dSm-ru-mlS">
                                                                 <font key="font" metaFont="system"/>
@@ -730,7 +731,6 @@
                                         </tableColumn>
                                         <tableColumn width="116" minWidth="40" maxWidth="1000" id="8kx-G5-cDr">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Offset">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -741,8 +741,8 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="LumpsListOffsetCellID" id="srz-HV-NB4">
-                                                    <rect key="frame" x="120" y="1" width="116" height="17"/>
+                                                <tableCellView identifier="ModelsListOffsetCellID" id="srz-HV-NB4">
+                                                    <rect key="frame" x="135" y="1" width="116" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nro-bg-wh2">
@@ -763,7 +763,6 @@
                                         </tableColumn>
                                         <tableColumn width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="Ljd-E1-RgT">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Size">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableHeaderCell>
@@ -774,8 +773,8 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="LumpsListSizeCellID" id="E3r-ma-wj2">
-                                                    <rect key="frame" x="239" y="1" width="64" height="17"/>
+                                                <tableCellView identifier="ModelsListSizeCellID" id="E3r-ma-wj2">
+                                                    <rect key="frame" x="254" y="1" width="64" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myP-W8-x8y">
@@ -794,9 +793,8 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn width="170" minWidth="10" maxWidth="3.4028234663852886e+38" id="d8X-OH-qSa">
+                                        <tableColumn width="132" minWidth="10" maxWidth="3.4028234663852886e+38" id="d8X-OH-qSa">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="About">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableHeaderCell>
@@ -807,12 +805,12 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="LumpsListAboutCellID" id="onN-Al-2rK">
-                                                    <rect key="frame" x="306" y="1" width="170" height="17"/>
+                                                <tableCellView identifier="ModelsListAboutCellID" id="onN-Al-2rK">
+                                                    <rect key="frame" x="321" y="1" width="136" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDV-2j-fAZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="170" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="136" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="XUk-Zc-206">
                                                                 <font key="font" metaFont="system"/>
@@ -844,7 +842,7 @@
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="HWn-0K-nRR">
+                        <tableHeaderView key="headerView" wantsLayer="YES" id="HWn-0K-nRR">
                             <rect key="frame" x="0.0" y="0.0" width="478" height="25"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
@@ -863,7 +861,7 @@
                         <nil key="toolTip"/>
                         <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="Hwe-dv-YsC">
                             <rect key="frame" x="0.0" y="14" width="96" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="psl-sP-SK6">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -884,15 +882,13 @@
                     <toolbarItem reference="iaj-xE-437"/>
                 </defaultToolbarItems>
             </toolbar>
+            <point key="canvasLocation" x="139" y="-135"/>
         </window>
-        <customObject id="Wmz-ap-gtp" userLabel="LumpsListDataSource" customClass="LumpsListDataSource">
+        <customObject id="Wmz-ap-gtp" userLabel="TableViewDataSource" customClass="TableViewDataSource"/>
+        <customObject id="lIs-fI-Q9A" customClass="MenuEventsHandler">
             <connections>
-                <outlet property="lumpsListTableView" destination="0XX-r9-f6N" id="AIQ-hY-jHr"/>
-            </connections>
-        </customObject>
-        <customObject id="lIs-fI-Q9A" customClass="UIEventsHandler">
-            <connections>
-                <outlet property="delegate" destination="Wmz-ap-gtp" id="9po-v8-MFf"/>
+                <outlet property="tableView" destination="0XX-r9-f6N" id="enK-j9-r1K"/>
+                <outlet property="tableViewDataSource" destination="Wmz-ap-gtp" id="w6a-C8-fwS"/>
             </connections>
         </customObject>
     </objects>

@@ -7,6 +7,8 @@
 //
 
 #import "LodService.h"
+#import "ModelsServiceProtocol.h"
+#import "CellModel.h"
 #import "LodModel.h"
 #include "alod.h"
 
@@ -28,21 +30,48 @@
     return self;
 }
 
-#pragma mark - LodServiceProtocol -
+#pragma mark - ModelsServiceProtocol -
 
-- (NSArray<LodModel *> *)lodItemsList {
+- (NSArray<CellModel *> *)modelsList {
+    NSMutableArray<CellModel *> *cellsModelsList = [NSMutableArray new];
+    
     std::list<spcWAD::ALodItem> lodItemsList = self.lodTools->extractItems(self.fileName.UTF8String);
-    self.lodTools->readSprite(self.fileName.UTF8String, *lodItemsList.begin());
-    return [NSArray new];
-}
-
-- (void)exportLodItem:(LodModel *)model folderPath:(NSString *)folderPath {
+    for (std::list<spcWAD::ALodItem>::iterator iter = lodItemsList.begin(); iter != lodItemsList.end(); iter++) {
+        [cellsModelsList addObject: [self createCellModelWithLodItem: *iter]];
+    }
     
+    return [cellsModelsList copy];
 }
 
-- (void)exportLodAsImage:(LodModel *)model folderPath:(NSString *)folderPath {
+- (CellModel *)createCellModelWithLodItem: (spcWAD::ALodItem) lodItem {
+    CellModel *newModel = [CellModel new];
     
+    newModel.name = [NSString stringWithUTF8String: lodItem.name.c_str()];
+    newModel.offset = lodItem.offset;
+    newModel.size = lodItem.size;
+
+    return newModel;
 }
 
+- (NSArray<CellModel *> *)modelsListWithFilterString:(NSString *)filterString {
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
+    return [lumpsList copy];
+}
+
+- (NSArray<CellModel *> *)modelsListWithoutMaps {
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
+    return [lumpsList copy];
+}
+
+- (NSArray<CellModel *> *)modelsListWithMarkersOnly {
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
+    return [lumpsList copy];
+}
+
+- (void)exportModel:(CellModel *)model folderPath:(NSString *)folderPath {
+}
+
+- (void)exportModelAsImage:(CellModel *)model folderPath:(NSString *)folderPath {
+}
 
 @end

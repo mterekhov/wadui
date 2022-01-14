@@ -9,16 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @class LodModel;
+@protocol ModelsServiceProtocol;
 
 @protocol LodServiceProtocol <NSObject>
 
-- (NSArray<LodModel *> *)lodItemsList;
-- (void)exportLodItem:(LodModel *)model folderPath:(NSString *)folderPath;
-- (void)exportLodAsImage:(LodModel *)model folderPath:(NSString *)folderPath;
+//- (NSArray<LodModel *> *)lodItemsList;
+//- (void)exportLodItem:(LodModel *)model folderPath:(NSString *)folderPath;
+//- (void)exportLodAsImage:(LodModel *)model folderPath:(NSString *)folderPath;
 
 @end
 
-@interface LodService : NSObject<LodServiceProtocol>
+@interface LodService : NSObject<LodServiceProtocol, ModelsServiceProtocol>
 
 - (instancetype)initWithLodFileName: (NSString *)lodFileName;
 

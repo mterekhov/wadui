@@ -7,7 +7,7 @@
 //
 
 #import "LumpsService.h"
-#import "LumpModel.h"
+#import "CellModel.h"
 #include "awad.h"
 #include "alumptools.h"
 #include "autilities.h"
@@ -20,7 +20,7 @@
 
 @implementation LumpsService
 
-- (instancetype)initWithWadFileName:(NSString *)wadFileName {
+- (instancetype)initWithWadFileName: (NSString *)wadFileName {
     self = [super init];
     
     _wadTools = new spcWAD::AWAD(wadFileName.UTF8String);
@@ -28,10 +28,10 @@
     return self;
 }
 
-#pragma mark - LumpsServiceProtocol -
+#pragma mark - ModelsServiceProtocol -
 
-- (NSArray<LumpModel *> *)lumpsList {
-    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+- (NSArray<CellModel *> *)modelsList {
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
     if (!self.wadTools) {
         return [lumpsList copy];
     }
@@ -44,8 +44,8 @@
     return [lumpsList copy];
 }
 
-- (NSArray<LumpModel *> *)lumpsListWithFilterString:(NSString *)filterString {
-    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+- (NSArray<CellModel *> *)modelsListWithFilterString:(NSString *)filterString {
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
     if (!self.wadTools) {
         return [lumpsList copy];
     }
@@ -55,8 +55,8 @@
                          containsCompare:YES];
 }
 
-- (NSArray<LumpModel *> *)lumpsListWithoutMaps {
-    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+- (NSArray<CellModel *> *)modelsListWithoutMaps {
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
     if (!self.wadTools) {
         return [lumpsList copy];
     }
@@ -66,8 +66,8 @@
                          containsCompare:NO];
 }
 
-- (NSArray<LumpModel *> *)lumpsListWithMarkersOnly {
-    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+- (NSArray<CellModel *> *)modelsListWithMarkersOnly {
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
     if (!self.wadTools) {
         return [lumpsList copy];
     }
@@ -84,20 +84,20 @@
     return [lumpsList copy];
 }
 
-- (void)exportLump:(LumpModel *)model folderPath:(NSString *)folderPath {
+- (void)exportModel:(CellModel *)model folderPath:(NSString *)folderPath {
     spcWAD::ALump exportLump(model.size, model.offset, model.name.UTF8String);
     self.wadTools->exportLump(exportLump, folderPath.UTF8String);
 }
 
-- (void)exportLumpAsImage:(LumpModel *)model folderPath:(NSString *)folderPath {
+- (void)exportModelsAsImage:(CellModel *)model folderPath:(NSString *)folderPath {
     spcWAD::ALump exportLump(model.size, model.offset, model.name.UTF8String);
     self.wadTools->exportLump(exportLump, folderPath.UTF8String);
 }
 
 #pragma mark - Routine -
 
-- (LumpModel *)createLumpModelWithIter:(spcWAD::TLumpsListConstIter)iter {
-    LumpModel *newModel = [LumpModel new];
+- (CellModel *)createLumpModelWithIter:(spcWAD::TLumpsListConstIter)iter {
+    CellModel *newModel = [CellModel new];
     
     newModel.name = [NSString stringWithUTF8String:iter->lumpName.c_str()];
     newModel.offset = iter->lumpOffset;
@@ -114,10 +114,10 @@
  @param containsCompare if YES then filters everything that strictly matches filter array
  @return filtered list of lumps
  */
-- (NSArray<LumpModel *> *)lumpsListWithNameFilter:(std::vector<std::string>) filtersList
+- (NSArray<CellModel *> *)lumpsListWithNameFilter:(std::vector<std::string>) filtersList
                                     includeFilter:(BOOL)includeFilter
                                   containsCompare:(BOOL)containsCompare {
-    NSMutableArray<LumpModel *> *lumpsList = [NSMutableArray new];
+    NSMutableArray<CellModel *> *lumpsList = [NSMutableArray new];
     if (!self.wadTools) {
         return [lumpsList copy];
     }
